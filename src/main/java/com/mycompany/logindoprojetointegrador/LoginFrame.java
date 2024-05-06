@@ -45,7 +45,7 @@ public class LoginFrame extends javax.swing.JFrame {
 
         entrarJbutton.setContentAreaFilled(false);
         entrarJbutton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(entrarJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 480, 320, 60));
+        getContentPane().add(entrarJbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 320, 70));
 
         cadastrarJButton.setContentAreaFilled(false);
         cadastrarJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
