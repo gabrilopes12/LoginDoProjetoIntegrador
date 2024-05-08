@@ -30,6 +30,7 @@ public class CadastroFrame extends javax.swing.JFrame {
         emailCadastroField = new javax.swing.JTextField();
         passwordCadastroField = new javax.swing.JPasswordField();
         registrarJButton = new javax.swing.JButton();
+        voltarLoginButton = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,6 +49,15 @@ public class CadastroFrame extends javax.swing.JFrame {
         registrarJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(registrarJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 660, 260, 60));
 
+        voltarLoginButton.setContentAreaFilled(false);
+        voltarLoginButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        voltarLoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                voltarLoginButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(voltarLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 260, 20));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
 
@@ -57,6 +67,11 @@ public class CadastroFrame extends javax.swing.JFrame {
     private void nomeCadastroFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCadastroFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nomeCadastroFieldActionPerformed
+
+    private void voltarLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarLoginButtonActionPerformed
+        LoginFrame voltaFrame = new LoginFrame();
+        voltaFrame.setVisible(true);
+    }//GEN-LAST:event_voltarLoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,5 +114,6 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JTextField nomeCadastroField;
     private javax.swing.JPasswordField passwordCadastroField;
     private javax.swing.JButton registrarJButton;
+    private javax.swing.JButton voltarLoginButton;
     // End of variables declaration//GEN-END:variables
 }
