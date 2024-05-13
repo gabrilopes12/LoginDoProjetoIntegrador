@@ -69,6 +69,9 @@ public class LoginFrame extends javax.swing.JFrame {
     private void cadastrarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarJButtonActionPerformed
         CadastroFrame telaDeCadastro = new CadastroFrame();
         telaDeCadastro.setVisible(true);
+        this.dispose();
+        
+        
     }//GEN-LAST:event_cadastrarJButtonActionPerformed
 
     /**
