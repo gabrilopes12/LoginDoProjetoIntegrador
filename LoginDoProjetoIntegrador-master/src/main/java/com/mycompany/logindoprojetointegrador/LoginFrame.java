@@ -19,6 +19,7 @@ public class LoginFrame extends javax.swing.JFrame {
      */
     public LoginFrame() {
         initComponents();
+        setLocationRelativeTo(null); //para deixar a tela no meio creio que seja melhor
     }
 
     /**
@@ -94,14 +95,15 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_emailFieldActionPerformed
 
     private void entrarJbuttonActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        //pega o login do usuário
-        String login = emailField.getText();
+        //pega o email
+        String email = emailField.getText();
         //pega a senha do usuário como char[] e converte para String
         String senha = new String(jPasswordField1.getPassword());
+        
         //verifica se o usuário é válido
         
         try{
-            Usuario usuario = new Usuario(login, senha);
+            Usuario usuario = new Usuario(email, senha); 
             DAO dao = new DAO();
             if(dao.existe(usuario)){
                 JOptionPane.showMessageDialog (null, "Bem vindo, " + usuario.pegarnome() + "!");

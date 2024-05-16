@@ -7,11 +7,17 @@ package com.mycompany.logindoprojetointegrador;
  */
 public class Usuario {
    private String nome;
-    private String senha;
+   private String email; // criei essa variravel para podermos destinguir email de nome na tela de cadastro e não ficar confuso
+   private String senha;
     
-public Usuario(String nome, String senha){
+public Usuario(String nome, String email, String senha){
       this.nome = nome;
       this.senha = senha;
+      this.email = email; 
+    }
+public Usuario(String email, String senha){ // construtor novo para a tela de login 
+      this.email = email; 
+      this.senha = senha; 
     }
 
     public String pegarnome(){
@@ -28,6 +34,14 @@ public Usuario(String nome, String senha){
     
     public void definasenha(String senha){
         this.senha = senha; 
+    }
+    
+    public String pegaremail(){
+        return email; 
+    }
+    
+    public void definaemail(String email){
+        this.email = email; 
     }
        
 }

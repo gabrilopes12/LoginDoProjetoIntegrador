@@ -4,6 +4,8 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gabriel
@@ -15,6 +17,7 @@ public class CadastroFrame extends javax.swing.JFrame {
      */
     public CadastroFrame() {
         initComponents();
+        setLocationRelativeTo(null); //para deixar a tela no meio creio que seja melhor
     }
 
     /**
@@ -47,6 +50,11 @@ public class CadastroFrame extends javax.swing.JFrame {
 
         registrarJButton.setContentAreaFilled(false);
         registrarJButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        registrarJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registrarJButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(registrarJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 660, 260, 60));
 
         voltarLoginButton.setContentAreaFilled(false);
@@ -73,6 +81,61 @@ public class CadastroFrame extends javax.swing.JFrame {
         voltaFrame.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_voltarLoginButtonActionPerformed
+
+    private void registrarJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registrarJButtonActionPerformed
+        String nome = nomeCadastroField.getText(); 
+        String email = emailCadastroField.getText();
+        String senha = new String(passwordCadastroField.getPassword()); 
+        
+        
+        if(nome.length() == 0 && email.length() == 0 &&  senha.length() == 0){ 
+            JOptionPane.showMessageDialog (null, "Insira seus dados!");
+          
+        }
+        else if(email.length() == 0 ){ //verifica se o email está vazio
+            JOptionPane.showMessageDialog (null, "Preencha o seu email!");
+          
+        }
+        else if( senha.length() == 0 ){ //verifica se a senha está vazio
+            JOptionPane.showMessageDialog (null, "Preencha a sua senha!");
+          
+        }
+        else if( nome.length() == 0){ //verifica se o nome está vazio
+            JOptionPane.showMessageDialog (null, "Preencha seu nome!");
+        }
+        else{
+            try{
+                Usuario usuario = new Usuario(nome,email,senha);
+                DAO dao = new DAO();
+                    
+                if(dao.existe(usuario)){
+                JOptionPane.showMessageDialog (null, "Cadastro já existente! Faça o login");
+                
+                telaTeste tT = new telaTeste();
+                tT.setVisible(true);
+                this.dispose();
+            }
+            else{
+   
+            int escolha = JOptionPane.showConfirmDialog(null, "Confirmar cadastro?","Confirme o cadastro",JOptionPane.OK_CANCEL_OPTION);
+            if(escolha == JOptionPane.OK_OPTION){
+            dao.inserirCadastro(usuario);
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
+                        
+            nomeCadastroField.setText("");
+            emailCadastroField.setText("");
+            passwordCadastroField.setText(""); 
+                        
+                         
+                    }
+                }
+            }
+            catch(Exception e){
+             JOptionPane.showMessageDialog(null, "Falha técnica, tente mais tarde");
+             e.printStackTrace(); 
+             }
+        } 
+    }//GEN-LAST:event_registrarJButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -15,9 +15,9 @@ import java.sql.ResultSet;
 public class DAO {
     
     public boolean existe(Usuario usuario) throws Exception{
-      String sql = "SELECT * FROM jogador WHERE nome = ? AND senha = ?";
+      String sql = "SELECT * FROM jogador WHERE nome = ? AND senha = ?"; // mudar aqui falta definir o banco de dados
     try(Connection conn = ConexaoBd.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){
-      ps.setString(1, usuario.pegarnome());
+      ps.setString(1, usuario.pegaremail());
       ps.setString(2, usuario.pegarsenha());
     try(ResultSet rs = ps.executeQuery()){
         return rs.next(); 
@@ -26,4 +26,15 @@ public class DAO {
     
    }
   } 
+    
+     public void inserirCadastro(Usuario usuario) throws Exception{
+       String sql = "INSERT INTO tb_curso(nome,email,senha) VALUES (?,?,?)"; // mudar aqui falta definir o banco de dados
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setString(1,usuario.pegarnome());
+             ps.setString(2,usuario.pegaremail());  
+             ps.setString(3,usuario.pegarsenha()); 
+             ps.execute(); 
+         }
+       
+     }
 }
