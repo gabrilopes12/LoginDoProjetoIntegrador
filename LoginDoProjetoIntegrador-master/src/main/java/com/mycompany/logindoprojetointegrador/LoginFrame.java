@@ -106,7 +106,7 @@ public class LoginFrame extends javax.swing.JFrame {
             Usuario usuario = new Usuario(email, senha); 
             DAO dao = new DAO();
             if(dao.existe(usuario)){
-                JOptionPane.showMessageDialog (null, "Bem vindo, " + usuario.pegarnome() + "!");
+                JOptionPane.showMessageDialog (null, "Bem vindo !");
                 
                 telaTeste tT = new telaTeste();
                 tT.setVisible(true);

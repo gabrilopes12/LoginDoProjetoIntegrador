@@ -111,9 +111,7 @@ public class CadastroFrame extends javax.swing.JFrame {
                 if(dao.existe(usuario)){
                 JOptionPane.showMessageDialog (null, "Cadastro já existente! Faça o login");
                 
-                telaTeste tT = new telaTeste();
-                tT.setVisible(true);
-                this.dispose();
+               
             }
             else{
    
