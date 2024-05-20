@@ -105,10 +105,19 @@ public class LoginFrame extends javax.swing.JFrame {
         try{
             Usuario usuario = new Usuario(email, senha); 
             DAO dao = new DAO();
+            if(dao.verificaProfessor(usuario)){
+                JOptionPane.showMessageDialog (null, "Bem vindo professor!");
+                telaTesteProfessor tTP = new telaTesteProfessor(); // tela do professor
+                tTP.setVisible(true);
+                this.dispose();
+            
+            }
+            else{
+            
             if(dao.existe(usuario)){
-                JOptionPane.showMessageDialog (null, "Bem vindo !");
+                JOptionPane.showMessageDialog (null, "Bem vindo!");
                 
-                telaTeste tT = new telaTeste();
+                telaTeste tT = new telaTeste(); // tela de incio do jogo 
                 tT.setVisible(true);
                 this.dispose();
             }
@@ -117,7 +126,8 @@ public class LoginFrame extends javax.swing.JFrame {
                 CadastroFrame cf = new CadastroFrame();
                 cf.setVisible(true);
                 this.dispose();
-            }   
+            }
+           }
             
     }                                           
     catch(Exception e){
