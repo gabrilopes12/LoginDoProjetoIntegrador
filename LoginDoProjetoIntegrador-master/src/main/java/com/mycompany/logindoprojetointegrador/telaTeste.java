@@ -33,13 +33,25 @@ public class telaTeste extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jogarButton.setContentAreaFilled(false);
-        getContentPane().add(jogarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 600, 240, 100));
+        jogarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jogarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jogarButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jogarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 560, 240, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Captura de Tela 2024-05-20 às 19.09.07.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 790));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
+        Pergunta1 telaDaPergunta1 = new Pergunta1();
+        telaDaPergunta1.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jogarButtonActionPerformed
 
     /**
      * @param args the command line arguments
