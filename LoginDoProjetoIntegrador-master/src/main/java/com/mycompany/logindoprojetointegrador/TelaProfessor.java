@@ -27,13 +27,14 @@ public class TelaProfessor extends javax.swing.JFrame {
     private void initComponents() {
 
         mostrarAlunosButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        gerenciarPerguntasButton = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         mostrarAlunosButton.setContentAreaFilled(false);
+        mostrarAlunosButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         mostrarAlunosButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 mostrarAlunosButtonActionPerformed(evt);
@@ -41,8 +42,14 @@ public class TelaProfessor extends javax.swing.JFrame {
         });
         getContentPane().add(mostrarAlunosButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, 310, 170));
 
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 320, 160));
+        gerenciarPerguntasButton.setContentAreaFilled(false);
+        gerenciarPerguntasButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        gerenciarPerguntasButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gerenciarPerguntasButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(gerenciarPerguntasButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 300, 320, 160));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BOM DIA PROFESSOR!.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
@@ -53,6 +60,14 @@ public class TelaProfessor extends javax.swing.JFrame {
     private void mostrarAlunosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarAlunosButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_mostrarAlunosButtonActionPerformed
+
+    private void gerenciarPerguntasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarPerguntasButtonActionPerformed
+        GerenciarPerguntas telaGerencia = new GerenciarPerguntas();
+        telaGerencia.setVisible(true);
+        this.dispose();
+        
+        
+    }//GEN-LAST:event_gerenciarPerguntasButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,7 +105,7 @@ public class TelaProfessor extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton gerenciarPerguntasButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton mostrarAlunosButton;
     // End of variables declaration//GEN-END:variables
