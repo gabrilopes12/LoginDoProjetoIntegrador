@@ -107,7 +107,7 @@ public class LoginFrame extends javax.swing.JFrame {
             DAO dao = new DAO();
             if(dao.verificaProfessor(usuario)){
                 JOptionPane.showMessageDialog (null, "Bem vindo professor!");
-                telaTesteProfessor tTP = new telaTesteProfessor(); // tela do professor
+                TelaProfessor tTP = new TelaProfessor(); // tela do professor
                 tTP.setVisible(true);
                 this.dispose();
             
