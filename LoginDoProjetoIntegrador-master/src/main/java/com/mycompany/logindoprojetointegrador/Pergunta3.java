@@ -10,12 +10,12 @@ import javax.swing.JOptionPane;
  *
  * @author gabriel
  */
-public class Pergunta2 extends javax.swing.JFrame {
+public class Pergunta3 extends javax.swing.JFrame {
 
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta2() {
+    public Pergunta3() {
         initComponents();
     }
 
@@ -35,42 +35,42 @@ public class Pergunta2 extends javax.swing.JFrame {
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
-        alternativaDPane = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        alernativaCfield2 = new javax.swing.JTextField();
         enunciadoPane = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        alernativaCfield3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         alernativaAfield.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        alernativaAfield.setText("Limpeza da boca.");
+        alernativaAfield.setText("A alface.");
         alernativaAfield.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alernativaAfieldActionPerformed(evt);
             }
         });
-        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 300, 60));
+        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 150, 60));
 
         alernativaCfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        alernativaCfield1.setText("Proteção dos dentes.");
+        alernativaCfield1.setText("A maionese.");
         alernativaCfield1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alernativaCfield1ActionPerformed(evt);
             }
         });
-        getContentPane().add(alernativaCfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 360, 60));
+        getContentPane().add(alernativaCfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 210, 60));
 
         alernativaBfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        alernativaBfield1.setText("Regulação do pH da boca. ");
+        alernativaBfield1.setText("O queijo.");
         alernativaBfield1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alernativaBfield1ActionPerformed(evt);
             }
         });
-        getContentPane().add(alernativaBfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 450, 60));
+        getContentPane().add(alernativaBfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 520, 160, 60));
 
         alternativaAButton.setContentAreaFilled(false);
         alternativaAButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,27 +108,25 @@ public class Pergunta2 extends javax.swing.JFrame {
         });
         getContentPane().add(alternativaDButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, 80, 80));
 
-        alternativaDPane.setEnabled(false);
+        alernativaCfield2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        alernativaCfield2.setText("O pão francês.");
+        alernativaCfield2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alernativaCfield2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(alernativaCfield2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 250, 60));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Digestão inicial \ndas proteínas.");
-        alternativaDPane.setViewportView(jTextArea2);
-
-        getContentPane().add(alternativaDPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 500, 270, 110));
-
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setTabSize(6);
-        jTextArea1.setText("A saliva é uma substância incolor lançada na \nboca pelas glândulas salivares. \nEntre as funções a seguir, qual não pode ser atribuída à saliva?");
+        jTextArea1.setText("Ao preparar um lanche, foram usados pão francês,\nmaionese, filé mignon, queijo e alface. O primeiro desses \ningredientes a sofrer ação de enzimas digestivas é: ");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setBorder(null);
         enunciadoPane.setViewportView(jTextArea1);
 
-        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 720, 100));
+        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 630, 100));
 
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
@@ -139,6 +137,15 @@ public class Pergunta2 extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome.png"))); // NOI18N
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 690));
+
+        alernativaCfield3.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        alernativaCfield3.setText("A maionese.");
+        alernativaCfield3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                alernativaCfield3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(alernativaCfield3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 210, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,7 +164,7 @@ public class Pergunta2 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        Pergunta2 tela2 = new Pergunta2();
+        Pergunta3 tela2 = new Pergunta3();
         tela2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaAButtonActionPerformed
@@ -173,6 +180,14 @@ public class Pergunta2 extends javax.swing.JFrame {
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
     }//GEN-LAST:event_alternativaDButtonActionPerformed
+
+    private void alernativaCfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaCfield2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alernativaCfield2ActionPerformed
+
+    private void alernativaCfield3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaCfield3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_alernativaCfield3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,21 +206,23 @@ public class Pergunta2 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Pergunta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Pergunta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Pergunta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Pergunta2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Pergunta3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta2().setVisible(true);
+                new Pergunta3().setVisible(true);
             }
         });
     }
@@ -214,15 +231,15 @@ public class Pergunta2 extends javax.swing.JFrame {
     private javax.swing.JTextField alernativaAfield;
     private javax.swing.JTextField alernativaBfield1;
     private javax.swing.JTextField alernativaCfield1;
+    private javax.swing.JTextField alernativaCfield2;
+    private javax.swing.JTextField alernativaCfield3;
     private javax.swing.JButton alternativaAButton;
     private javax.swing.JButton alternativaBButton;
     private javax.swing.JButton alternativaCButton;
     private javax.swing.JButton alternativaDButton;
-    private javax.swing.JScrollPane alternativaDPane;
     private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
 }
