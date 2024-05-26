@@ -154,6 +154,7 @@ public class Pergunta1 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
+        
         Pergunta2 tela2 = new Pergunta2();
         tela2.setVisible(true);
         this.dispose();

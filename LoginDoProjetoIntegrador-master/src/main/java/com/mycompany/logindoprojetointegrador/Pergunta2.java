@@ -15,10 +15,31 @@ public class Pergunta2 extends javax.swing.JFrame {
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta2() {
+    public Pergunta2()  {
         initComponents();
+        String enunciado =  enunciadoField.getText();
+        String questaoA = alernativaAfield.getText();
+        String questaoB = alernativaBfield1.getText();
+        String questaoC = alernativaCfield1.getText();
+        String questaoD = alernativaDfield1.getText();
+        
+        construtorPergunta cp = new construtorPergunta(enunciado,questaoA,questaoB,questaoC,questaoD);
+        DAO dao = new DAO();
+        try{
+        dao.escolhePergunta(cp);
+        enunciadoField.setText(cp.pegarEnunciado());
+        alernativaAfield.setText(cp.pegarQuestaoA());
+        alernativaBfield1.setText(cp.pegarQuestaoB());
+        alernativaCfield1.setText(cp.pegarQuestaoC());
+        alernativaDfield1.setText(cp.pegarQuestaoD());
+        System.out.println("Fui chamado");
     }
-
+        catch (Exception e){
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Falha técnica. Tente novamente mais tarde.");
+                            }
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -123,7 +144,7 @@ public class Pergunta2 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enunciadoFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enunciadoFieldActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_enunciadoFieldActionPerformed
 
     private void alernativaAfieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaAfieldActionPerformed
