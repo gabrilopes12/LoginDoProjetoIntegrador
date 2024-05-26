@@ -36,7 +36,7 @@ public class Pergunta1 extends javax.swing.JFrame {
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        enunciadoPane = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class Pergunta1 extends javax.swing.JFrame {
                 alernativaAfieldActionPerformed(evt);
             }
         });
-        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 170, 60));
+        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 180, 60));
 
         alernativaDfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaDfield1.setText("Endócrina.");
@@ -125,14 +125,14 @@ public class Pergunta1 extends javax.swing.JFrame {
         jTextArea1.setText("As glândulas salivares produzem e lançam a saliva no interior da \nboca. Por causa dessa característica, \npode-se afirmar que são um exemplo de glândula: ");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        enunciadoPane.setViewportView(jTextArea1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 720, 100));
+        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 720, 120));
 
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("BOCA");
-        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 130, 80));
+        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 130, 80));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome.png"))); // NOI18N
@@ -160,7 +160,6 @@ public class Pergunta1 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        
         Pergunta2 tela2 = new Pergunta2();
         tela2.setVisible(true);
         this.dispose();
@@ -222,8 +221,8 @@ public class Pergunta1 extends javax.swing.JFrame {
     private javax.swing.JButton alternativaBButton;
     private javax.swing.JButton alternativaCButton;
     private javax.swing.JButton alternativaDButton;
+    private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel tituloLabel;
     // End of variables declaration//GEN-END:variables
