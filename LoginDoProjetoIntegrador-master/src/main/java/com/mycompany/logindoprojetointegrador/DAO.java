@@ -50,6 +50,20 @@ public class DAO {
 
    }
 }
+    public boolean escolhePergunta(construtorPergunta pergunta) throws Exception{
+       String sql = "SELECT * FROM questoes ORDER BY RAND() WHERE id_Orgao = ?"; 
+        try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setString(1, pergunta.pegarEnunciado());
+             ps.setString(2,pergunta.pegarQuestaoA());  
+             ps.setString(3,pergunta.pegarQuestaoB()); 
+             ps.setString(4,pergunta.pegarQuestaoC());
+             ps.setString(5,pergunta.pegarQuestaoD()); 
+        try(ResultSet rs = ps.executeQuery()){
+                return rs.next(); 
+        } 
+         
+       }
+}
 
 
 }
