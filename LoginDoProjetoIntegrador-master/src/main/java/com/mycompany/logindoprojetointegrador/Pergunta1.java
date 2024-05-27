@@ -11,11 +11,14 @@ import javax.swing.JOptionPane;
  * @author gabriel
  */
 public class Pergunta1 extends javax.swing.JFrame {
+    int contador = 0;
+    int id_aluno;
 
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta1() {
+    public Pergunta1(int id_aluno) {
+        this.id_aluno = id_aluno;
         initComponents();
     }
 
@@ -36,7 +39,6 @@ public class Pergunta1 extends javax.swing.JFrame {
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
-        enunciadoPane = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -125,9 +127,7 @@ public class Pergunta1 extends javax.swing.JFrame {
         jTextArea1.setText("As glândulas salivares produzem e lançam a saliva no interior da \nboca. Por causa dessa característica, \npode-se afirmar que são um exemplo de glândula: ");
         jTextArea1.setAutoscrolls(false);
         jTextArea1.setBorder(null);
-        enunciadoPane.setViewportView(jTextArea1);
-
-        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 720, 120));
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, -1));
 
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
@@ -160,7 +160,8 @@ public class Pergunta1 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        Pergunta2 tela2 = new Pergunta2();
+        contador++;
+        Pergunta2 tela2 = new Pergunta2(contador, id_aluno);
         tela2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaAButtonActionPerformed
@@ -207,7 +208,7 @@ public class Pergunta1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta1().setVisible(true);
+                new Pergunta1(0).setVisible(true);
             }
         });
     }
@@ -221,7 +222,6 @@ public class Pergunta1 extends javax.swing.JFrame {
     private javax.swing.JButton alternativaBButton;
     private javax.swing.JButton alternativaCButton;
     private javax.swing.JButton alternativaDButton;
-    private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel tituloLabel;

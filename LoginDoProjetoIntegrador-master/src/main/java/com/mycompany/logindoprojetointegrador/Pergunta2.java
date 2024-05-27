@@ -11,11 +11,12 @@ import javax.swing.JOptionPane;
  * @author gabriel
  */
 public class Pergunta2 extends javax.swing.JFrame {
-
+    int contador = 0;
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta2() {
+    public Pergunta2(int contador) {
+        this.contador = contador;
         initComponents();
     }
 
@@ -168,7 +169,8 @@ public class Pergunta2 extends javax.swing.JFrame {
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
            JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        Pergunta3 tela3 = new Pergunta3();
+           contador++;
+        Pergunta3 tela3 = new Pergunta3(contador);
         tela3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
@@ -204,7 +206,7 @@ public class Pergunta2 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta2().setVisible(true);
+                new Pergunta2(0).setVisible(true);
             }
         });
     }

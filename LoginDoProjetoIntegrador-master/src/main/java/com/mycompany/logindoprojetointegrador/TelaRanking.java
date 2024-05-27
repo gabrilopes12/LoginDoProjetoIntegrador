@@ -6,15 +6,14 @@ package com.mycompany.logindoprojetointegrador;
 
 /**
  *
- * @author 24.01414-0
+ * @author gabriel
  */
-public class telaTeste extends javax.swing.JFrame {
-    int id_aluno = 0;
+public class TelaRanking extends javax.swing.JFrame {
+
     /**
-     * Creates new form telaTeste
+     * Creates new form TelaRanking
      */
-    public telaTeste(int id_aluno) {
-        this.id_aluno = id_aluno;
+    public TelaRanking() {
         initComponents();
     }
 
@@ -27,32 +26,21 @@ public class telaTeste extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jogarButton = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jogarButton.setContentAreaFilled(false);
-        jogarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jogarButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jogarButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jogarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 560, 240, 100));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Captura de Tela 2024-05-20 às 19.09.07.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 710));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
-        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno);
-        telaDaPergunta1.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jogarButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -71,26 +59,32 @@ public class telaTeste extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(telaTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(telaTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(telaTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(telaTeste.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaRanking.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new telaTeste(0).setVisible(true);
+                new TelaRanking().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JButton jogarButton;
     // End of variables declaration//GEN-END:variables
 }
+
+
+// recebe todos os atributos (id_aluno, contador)
+//dar um select no banco de dados na tabela alunos: select nome from aluno where id_aluno = ?
+// insert into ranking (id_aluno, pontuacao) values (?,?)
+// 1 - id_aluno
+// 2 - contador
+// 2 labels, label.setText(nomeDoAluno), label.setText(contador);

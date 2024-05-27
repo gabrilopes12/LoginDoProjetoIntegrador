@@ -38,6 +38,16 @@ public class DAO {
        
      }
      
+      public void inserirRanking(int pontuacao, int id_aluno) throws Exception{
+       String sql = "INSERT INTO ranking(pontuacao, id_aluno) VALUES (?,?)"; 
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setInt(1,pontuacao);
+             ps.setInt(2,id_aluno);  
+             ps.execute(); 
+         }
+       
+     }
+     
     public boolean verificaProfessor(Usuario usuario) throws Exception{
       String sql = "SELECT * FROM professor WHERE email = ? AND senha = ?"; 
     try(Connection conn = ConexaoBd.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql)){

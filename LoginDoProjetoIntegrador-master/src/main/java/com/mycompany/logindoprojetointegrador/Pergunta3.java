@@ -11,11 +11,13 @@ import javax.swing.JOptionPane;
  * @author gabriel
  */
 public class Pergunta3 extends javax.swing.JFrame {
+    int contador = 0;
 
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta3() {
+    public Pergunta3(int contador) {
+        this.contador = contador;
         initComponents();
     }
 
@@ -52,7 +54,7 @@ public class Pergunta3 extends javax.swing.JFrame {
                 alernativaAfieldActionPerformed(evt);
             }
         });
-        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 150, 60));
+        getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 160, 60));
 
         alernativaCfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaCfield1.setText("A maionese.");
@@ -164,9 +166,10 @@ public class Pergunta3 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        Pergunta3 tela2 = new Pergunta3();
-        tela2.setVisible(true);
-        this.dispose();
+        contador++;
+        //Pergunta3 tela3 = new Pergunta3();
+      // tela3.setVisible(true);
+        //this.dispose();
     }//GEN-LAST:event_alternativaAButtonActionPerformed
 
     private void alternativaBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaBButtonActionPerformed
@@ -222,7 +225,7 @@ public class Pergunta3 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta3().setVisible(true);
+                new Pergunta3(0).setVisible(true);
             }
         });
     }
