@@ -12,13 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class Pergunta2 extends javax.swing.JFrame {
     int contador = 0;
-    int id_aluno = 0;
+    int id_aluno;
     /**
      * Creates new form Pergunta1
      */
     public Pergunta2(int contador, int id_aluno) {
         this.id_aluno = id_aluno;
-        this.contador = contador;
         initComponents();
     }
 
@@ -38,16 +37,16 @@ public class Pergunta2 extends javax.swing.JFrame {
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
+        jTextArea2 = new javax.swing.JTextArea();
         enunciadoPane = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        alernativaAfield.setEditable(false);
         alernativaAfield.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaAfield.setText("Limpeza da boca.");
         alernativaAfield.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +56,7 @@ public class Pergunta2 extends javax.swing.JFrame {
         });
         getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, -1, 60));
 
+        alernativaCfield1.setEditable(false);
         alernativaCfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaCfield1.setText("Proteção dos dentes.");
         alernativaCfield1.addActionListener(new java.awt.event.ActionListener() {
@@ -66,6 +66,7 @@ public class Pergunta2 extends javax.swing.JFrame {
         });
         getContentPane().add(alernativaCfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, -1, 60));
 
+        alernativaBfield1.setEditable(false);
         alernativaBfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaBfield1.setText("Regulação do pH da boca.");
         alernativaBfield1.addActionListener(new java.awt.event.ActionListener() {
@@ -111,6 +112,14 @@ public class Pergunta2 extends javax.swing.JFrame {
         });
         getContentPane().add(alternativaDButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, 80, 80));
 
+        jTextArea2.setEditable(false);
+        jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Digestão inicial \ndas proteínas.");
+        jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
+        getContentPane().add(jTextArea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 510, 240, 90));
+
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea1.setColumns(20);
@@ -124,14 +133,6 @@ public class Pergunta2 extends javax.swing.JFrame {
 
         getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 670, 150));
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Digestão inicial \ndas proteínas.");
-        jScrollPane1.setViewportView(jTextArea2);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 510, 270, 100));
-
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("BOCA");
@@ -139,6 +140,7 @@ public class Pergunta2 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome.png"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 690));
 
@@ -170,9 +172,9 @@ public class Pergunta2 extends javax.swing.JFrame {
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
-           JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-           contador++;
-        Pergunta3 tela3 = new Pergunta3(contador);
+        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
+        contador++;
+        Pergunta3 tela3 = new Pergunta3(contador, id_aluno);
         tela3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
@@ -223,7 +225,6 @@ public class Pergunta2 extends javax.swing.JFrame {
     private javax.swing.JButton alternativaDButton;
     private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel tituloLabel;

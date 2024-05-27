@@ -12,12 +12,13 @@ import javax.swing.JOptionPane;
  */
 public class Pergunta3 extends javax.swing.JFrame {
     int contador = 0;
+    int id_aluno;
 
     /**
      * Creates new form Pergunta1
      */
     public Pergunta3(int contador) {
-        this.contador = contador;
+        this.id_aluno = id_aluno;
         initComponents();
     }
 
@@ -37,9 +38,8 @@ public class Pergunta3 extends javax.swing.JFrame {
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
-        alernativaCfield2 = new javax.swing.JTextField();
-        enunciadoPane = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        alernativaCfield2 = new javax.swing.JTextField();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         alernativaCfield3 = new javax.swing.JTextField();
@@ -47,6 +47,7 @@ public class Pergunta3 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        alernativaAfield.setEditable(false);
         alernativaAfield.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaAfield.setText("A alface.");
         alernativaAfield.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +57,7 @@ public class Pergunta3 extends javax.swing.JFrame {
         });
         getContentPane().add(alernativaAfield, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 160, 60));
 
+        alernativaCfield1.setEditable(false);
         alernativaCfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaCfield1.setText("A maionese.");
         alernativaCfield1.addActionListener(new java.awt.event.ActionListener() {
@@ -65,6 +67,7 @@ public class Pergunta3 extends javax.swing.JFrame {
         });
         getContentPane().add(alernativaCfield1, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 310, 210, 60));
 
+        alernativaBfield1.setEditable(false);
         alernativaBfield1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaBfield1.setText("O queijo.");
         alernativaBfield1.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +113,17 @@ public class Pergunta3 extends javax.swing.JFrame {
         });
         getContentPane().add(alternativaDButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 510, 80, 80));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setTabSize(6);
+        jTextArea1.setText("Ao preparar um lanche, foram usados pão francês,\nmaionese, filé mignon, queijo e alface. O primeiro desses \ningredientes a sofrer ação de enzimas digestivas é: ");
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setBorder(null);
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 130, -1, 120));
+
+        alernativaCfield2.setEditable(false);
         alernativaCfield2.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         alernativaCfield2.setText("O pão francês.");
         alernativaCfield2.addActionListener(new java.awt.event.ActionListener() {
@@ -118,17 +132,6 @@ public class Pergunta3 extends javax.swing.JFrame {
             }
         });
         getContentPane().add(alernativaCfield2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 520, 250, 60));
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setTabSize(6);
-        jTextArea1.setText("Ao preparar um lanche, foram usados pão francês,\nmaionese, filé mignon, queijo e alface. O primeiro desses \ningredientes a sofrer ação de enzimas digestivas é: ");
-        jTextArea1.setAutoscrolls(false);
-        jTextArea1.setBorder(null);
-        enunciadoPane.setViewportView(jTextArea1);
-
-        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 630, 110));
 
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
@@ -165,11 +168,7 @@ public class Pergunta3 extends javax.swing.JFrame {
     }//GEN-LAST:event_alernativaCfield1ActionPerformed
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        contador++;
-        //Pergunta3 tela3 = new Pergunta3();
-      // tela3.setVisible(true);
-        //this.dispose();
+        JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
     }//GEN-LAST:event_alternativaAButtonActionPerformed
 
     private void alternativaBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaBButtonActionPerformed
@@ -181,7 +180,11 @@ public class Pergunta3 extends javax.swing.JFrame {
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
+        contador++;
+        Pergunta4 tela4 = new Pergunta4(contador, id_aluno);
+        tela4.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
 
     private void alernativaCfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaCfield2ActionPerformed
@@ -240,7 +243,6 @@ public class Pergunta3 extends javax.swing.JFrame {
     private javax.swing.JButton alternativaBButton;
     private javax.swing.JButton alternativaCButton;
     private javax.swing.JButton alternativaDButton;
-    private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel tituloLabel;
