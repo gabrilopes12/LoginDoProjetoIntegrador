@@ -12,10 +12,12 @@ import javax.swing.JOptionPane;
  */
 public class Pergunta2 extends javax.swing.JFrame {
     int contador = 0;
+    int id_aluno = 0;
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta2(int contador) {
+    public Pergunta2(int contador, int id_aluno) {
+        this.id_aluno = id_aluno;
         this.contador = contador;
         initComponents();
     }
