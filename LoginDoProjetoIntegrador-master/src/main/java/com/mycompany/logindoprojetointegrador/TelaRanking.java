@@ -9,11 +9,15 @@ package com.mycompany.logindoprojetointegrador;
  * @author gabriel
  */
 public class TelaRanking extends javax.swing.JFrame {
+    int contador = 0;
+    int id_aluno;
 
     /**
      * Creates new form TelaRanking
      */
     public TelaRanking() {
+        this.contador = contador;
+        this.id_aluno = id_aluno;
         initComponents();
     }
 

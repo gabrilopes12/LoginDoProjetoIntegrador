@@ -176,6 +176,7 @@ public class Pergunta5 extends javax.swing.JFrame {
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
          JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
+        JOptionPane.showMessageDialog(null, contador);
         //Pergunta6 tela6 = new Pergunta6(contador);
         //tela6.setVisible(true);
         //this.dispose();
