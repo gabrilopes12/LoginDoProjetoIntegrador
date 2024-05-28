@@ -4,6 +4,8 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gabriel
@@ -15,10 +17,19 @@ public class TelaRanking extends javax.swing.JFrame {
     /**
      * Creates new form TelaRanking
      */
-    public TelaRanking() {
+    public TelaRanking(int id_aluno, int contador) {
         this.contador = contador;
         this.id_aluno = id_aluno;
         initComponents();
+        
+        DAO dao = new DAO(); 
+        try{
+             dao.inserirRanking(contador,id_aluno);
+        }
+        catch(Exception e){
+           JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -113,11 +124,13 @@ public class TelaRanking extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaRanking().setVisible(true);
+                new TelaRanking(0, 0).setVisible(true);
             }
         });
     }
-
+    
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel nome1Label;

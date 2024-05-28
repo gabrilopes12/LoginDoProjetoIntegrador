@@ -117,8 +117,8 @@ public class LoginFrame extends javax.swing.JFrame {
             if(dao.existe(usuario)){
                 JOptionPane.showMessageDialog (null, "Bem vindo!");
                 // usar um comando que acessa a base de dados com um select e pega o id do usuario inserido
-                int id_aluno = 0;
-                telaTeste tT = new telaTeste(id_aluno); // tela de incio do jogo 
+                Usuario usuariof = new Usuario(email);
+                telaTeste tT = new telaTeste(usuariof); // tela de incio do jogo 
                 tT.setVisible(true);
                 this.dispose();
             }

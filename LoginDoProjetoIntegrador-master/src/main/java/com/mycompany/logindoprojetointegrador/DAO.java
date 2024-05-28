@@ -72,8 +72,26 @@ public class DAO {
         } 
          
        }
+    
+    public int verificaID(Usuario usuario) throws Exception{
+        int id_aluno = 0; 
+        String sql = "SELECT id_aluno FROM aluno WHERE email = ?"; 
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setString(1,usuario.pegaremail());
+             ResultSet rs = ps.executeQuery();
+             
+             if (rs.next()) {
+                  id_aluno = rs.getInt("id_aluno");
+                 
+            }
+        }
+        return id_aluno;
+             
+         }
+    }
 
-}
+
+
 
 
 

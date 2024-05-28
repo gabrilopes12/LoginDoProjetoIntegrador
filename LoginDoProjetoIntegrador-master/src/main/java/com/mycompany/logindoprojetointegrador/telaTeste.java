@@ -4,19 +4,34 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 24.01414-0
  */
 public class telaTeste extends javax.swing.JFrame {
-    int id_aluno = 0;
+   int id_aluno = 0; 
     /**
      * Creates new form telaTeste
+     * @param usuario
      */
-    public telaTeste(int id_aluno) {
-        this.id_aluno = id_aluno;
+    public telaTeste(Usuario usuario) throws Exception {
+        try{
+             
+            DAO dao = new DAO();
+            int ousuario = dao.verificaID(usuario);
+            id_aluno = ousuario;
+            JOptionPane.showMessageDialog(null,id_aluno);
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -49,7 +64,8 @@ public class telaTeste extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
-        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno);
+        int contador = 0;
+        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno,contador);
         telaDaPergunta1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jogarButtonActionPerformed
@@ -83,8 +99,13 @@ public class telaTeste extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Usuario usuario) throws Exception {
+                new telaTeste(usuario).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new telaTeste(0).setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
     }

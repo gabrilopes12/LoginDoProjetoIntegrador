@@ -17,9 +17,10 @@ public class Pergunta5 extends javax.swing.JFrame {
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta5(int contador) {
+    public Pergunta5(int id_aluno, int contador) {
         this.contador = contador;
         this.id_aluno = id_aluno;
+        JOptionPane.showMessageDialog(null,id_aluno);
         initComponents();
     }
 
@@ -176,10 +177,9 @@ public class Pergunta5 extends javax.swing.JFrame {
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
          JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        JOptionPane.showMessageDialog(null, contador);
-        //Pergunta6 tela6 = new Pergunta6(contador);
-        //tela6.setVisible(true);
-        //this.dispose();
+        TelaRanking tela6 = new TelaRanking(id_aluno,contador);
+        tela6.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
 
     private void alernativaDfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaDfield2ActionPerformed
@@ -231,7 +231,7 @@ public class Pergunta5 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Pergunta5(0).setVisible(true);
+                new Pergunta5(0, 0).setVisible(true);
             }
         });
     }
