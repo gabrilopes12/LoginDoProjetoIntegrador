@@ -19,6 +19,7 @@ public class Pergunta3 extends javax.swing.JFrame {
      */
     public Pergunta3(int contador) {
         this.id_aluno = id_aluno;
+        this.contador = contador;
         initComponents();
     }
 
@@ -169,20 +170,23 @@ public class Pergunta3 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaAButtonActionPerformed
 
     private void alternativaBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaBButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaBButtonActionPerformed
 
     private void alternativaCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaCButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        Pergunta4 tela4 = new Pergunta4(contador, id_aluno);
+        Pergunta4 tela4 = new Pergunta4(contador);
         tela4.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed

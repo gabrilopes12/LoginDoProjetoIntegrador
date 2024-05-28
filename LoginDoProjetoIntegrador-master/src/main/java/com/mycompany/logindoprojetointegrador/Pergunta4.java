@@ -12,12 +12,14 @@ import javax.swing.JOptionPane;
  */
 public class Pergunta4 extends javax.swing.JFrame {
     int contador = 0;
+    int id_aluno;
 
     /**
      * Creates new form Pergunta1
      */
     public Pergunta4(int contador) {
         this.contador = contador;
+        this.id_aluno = id_aluno;
         initComponents();
     }
 
@@ -158,22 +160,25 @@ public class Pergunta4 extends javax.swing.JFrame {
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaAButtonActionPerformed
 
     private void alternativaBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaBButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaBButtonActionPerformed
 
     private void alternativaCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaCButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+        contador--;
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        //Pergunta3 tela3 = new Pergunta3();
-      // tela3.setVisible(true);
-        //this.dispose();
+        Pergunta5 tela5 = new Pergunta5(contador);
+        tela5.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
 
     private void alernativaDfield2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alernativaDfield2ActionPerformed
