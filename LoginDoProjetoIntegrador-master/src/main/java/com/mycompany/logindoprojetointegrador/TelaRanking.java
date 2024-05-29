@@ -4,6 +4,7 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -23,21 +24,74 @@ public class TelaRanking extends javax.swing.JFrame {
         initComponents();
         
         DAO dao = new DAO(); 
-// Desativei para não lotar o bd nos testes mas está funcionando
-//        try{
-//             dao.inserirRanking(contador,id_aluno);
-//        }
-//        catch(Exception e){
-//           JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
-//            e.printStackTrace();
-//        }
+ // Desativei para não lotar o bd nos testes mas está funcionando
+        try{
+             dao.inserirRanking(contador,id_aluno);
+        }
+        catch(Exception e){
+           JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
         
         // construir os if's e definir as labels
-        int defineTop = dao.verificaTOP();
-        JOptionPane.showMessageDialog(null, dao.exibeRanking(usuario));
+        List<Integer> top5Pontuacoes = dao.verificaTOP5(); 
+        List<String> top5Nomes = dao.verificaNOMETOP5();
+        JOptionPane.showMessageDialog (null,top5Pontuacoes); 
+        JOptionPane.showMessageDialog (null,top5Nomes);
 
-        
+        nome1Label.setText("");
+        pontuacao1Label.setText("");
+
+        nome2Label.setText("");
+        pontuacao2Label.setText("");
+
+        nome3Label.setText("");
+        pontuacao3Label.setText("");
+
+        nome4Label.setText("");
+        pontuacao4Label.setText("");
+
+        nome5Label.setText("");
+        pontuacao5Label.setText("");
+
+        // Atualize os rótulos apenas se os valores existirem
+        if (top5Nomes.size() > 0) {
+                nome1Label.setText(top5Nomes.get(0));
+            if (top5Pontuacoes.size() > 0) {
+                pontuacao1Label.setText(Integer.toString(top5Pontuacoes.get(0)));
+            }
+        }
+
+        if (top5Nomes.size() > 1) {
+            nome2Label.setText(top5Nomes.get(1));
+            if (top5Pontuacoes.size() > 1) {
+                pontuacao2Label.setText(Integer.toString(top5Pontuacoes.get(1)));
+            }
+        }
+
+        if (top5Nomes.size() > 2) {
+            nome3Label.setText(top5Nomes.get(2));
+            if (top5Pontuacoes.size() > 2) {
+                pontuacao3Label.setText(Integer.toString(top5Pontuacoes.get(2)));
+            }
+        }
+
+        if (top5Nomes.size() > 3) {
+            nome4Label.setText(top5Nomes.get(3));
+            if (top5Pontuacoes.size() > 3) {
+                pontuacao4Label.setText(Integer.toString(top5Pontuacoes.get(3)));
+            }
+        }
+
+        if (top5Nomes.size() > 4) {
+            nome5Label.setText(top5Nomes.get(4));
+            if (top5Pontuacoes.size() > 4) {
+                pontuacao5Label.setText(Integer.toString(top5Pontuacoes.get(4)));
+            }
+        }
     }
+
+            
 
  
 
@@ -66,15 +120,12 @@ public class TelaRanking extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nome1Label.setBackground(new java.awt.Color(0, 0, 0));
-        nome1Label.setText("label do nome");
-        getContentPane().add(nome1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 240, 50));
-
-        pontuacao1Label.setText("label da pontuaçao");
+        getContentPane().add(nome1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 240, 70));
         getContentPane().add(pontuacao1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 250, 60));
 
         nome2Label.setBackground(new java.awt.Color(0, 0, 0));
         nome2Label.setText("label do nome");
-        getContentPane().add(nome2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 270, 160, 50));
+        getContentPane().add(nome2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 160, 50));
 
         pontuacao2Label.setText("label da pontuacao");
         getContentPane().add(pontuacao2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 120, 40));

@@ -168,11 +168,15 @@ public class Pergunta6 extends javax.swing.JFrame {
     }//GEN-LAST:event_alternativaBButtonActionPerformed
 
     private void alternativaCButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaCButtonActionPerformed
+        try {
             JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        contador++;
-        //Pergunta7 tela7 = new Pergunta7(id_aluno,contador, usuario);
-        //tela7.setVisible(true);
-        this.dispose();
+            contador++;
+            TelaRanking tela7 = new TelaRanking(id_aluno,contador, usuario);
+            tela7.setVisible(true);
+            this.dispose();
+        } catch (Exception ex) {
+            Logger.getLogger(Pergunta6.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed

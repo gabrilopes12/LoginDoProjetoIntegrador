@@ -4,9 +4,12 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List; 
 
 /**
  *
@@ -61,17 +64,30 @@ public class DAO {
    }
 }
     public void escolhePergunta(construtorPergunta pergunta) throws Exception{
-       String sql = "SELECT * FROM questoes WHERE enunciado = ? AND questaoA = ? AND questaoB = ? AND questaoC = ? AND questaoD = ? ORDER BY RAND()"; 
+        String sql = "SELECT enunciado,questaoA, questaoB, questaoC, questaoD FROM questoes WHERE id_orgao = ? ORDER BY RAND()"; 
         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
              ps.setString(1, pergunta.pegarEnunciado());
              ps.setString(2,pergunta.pegarQuestaoA());  
              ps.setString(3,pergunta.pegarQuestaoB()); 
              ps.setString(4,pergunta.pegarQuestaoC());
              ps.setString(5,pergunta.pegarQuestaoD()); 
-             ps.execute(); 
+             ResultSet rs = ps.executeQuery();
+             if (rs.next()) {
+                  String texto = rs.getString("enunciado");
+                  pergunta.definaEnunciado(texto);
+                  String texto1 = rs.getString("questaoA");
+                  pergunta.definaQuestaoA(texto1);
+                  String texto2 = rs.getString("questaoB");
+                  pergunta.definaQuestaoB(texto2);
+                  String texto3 = rs.getString("questaoC");
+                  pergunta.definaQuestaoA(texto3);
+                  String texto4 = rs.getString("questaoD");
+                  pergunta.definaQuestaoD(texto4);
+                  
         } 
          
        }
+    }
     
     public int verificaID(Usuario usuario) throws Exception{
         int id_aluno = 0; 
@@ -105,23 +121,36 @@ public class DAO {
         return nome;
         }
     
-       public int verificaTOP() throws Exception{
-        int pontuacao = 0; 
-        String sql = "SELECT pontuacao FROM ranking "; 
+       public List verificaTOP5() throws Exception{
+        List<Integer> pontuacoes = new ArrayList<>();   
+        String sql = "SELECT pontuacao FROM ranking order by pontuacao desc limit 5"; 
          try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
              
              ResultSet rs = ps.executeQuery();
              
-             if (rs.next()) {
-                  pontuacao = rs.getInt("pontuacao");
-                  
-                 
+             while (rs.next()) {
+                int pontuacao = rs.getInt("pontuacao");
+                pontuacoes.add(pontuacao);
             }
         }
-        return pontuacao;
+        return pontuacoes;
              
          }
-       
+       public List verificaNOMETOP5() throws Exception{
+        List<String> nomes = new ArrayList<>();   
+        String sql = "select nome from aluno as a join ranking as r on a.id_aluno = r.id_aluno limit 5"; 
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             
+             ResultSet rs = ps.executeQuery();
+             
+             while (rs.next()) {
+                String nome = rs.getString("nome");
+                nomes.add(nome);
+            }
+        }
+        return nomes;
+             
+         }
 
 }
 
