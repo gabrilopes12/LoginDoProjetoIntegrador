@@ -14,6 +14,8 @@ public class construtorPergunta {
     private String questaoB;
     private String questaoC;
     private String questaoD;
+    private int id_orgao; 
+    private int resposta;
     
     public construtorPergunta(String enunciado, String questaoA, String questaoB, String questaoC, String questaoD){
         this.enunciado = enunciado; 
@@ -21,6 +23,14 @@ public class construtorPergunta {
         this.questaoB = questaoB; 
         this.questaoC = questaoC;
         this.questaoD = questaoD;
+    }
+    
+    public construtorPergunta(){
+        
+    }
+    
+    public construtorPergunta(int id_orgao){
+        this.id_orgao = id_orgao; 
     }
 
     public String pegarEnunciado(){
@@ -63,4 +73,20 @@ public class construtorPergunta {
     public void definaQuestaoD(String questaoD){
         this.questaoD = questaoD; 
     }    
+    
+    public int pegarIDOrgao(){
+        return id_orgao;
+    }
+    
+    public void definaIDOrgao(int id_orgao){
+        this.id_orgao = id_orgao; 
+    }
+    
+     public int pegarResposta(){
+        return resposta;
+    }
+    
+    public void definaResposta(int resposta){
+        this.resposta = resposta; 
+    }
 }

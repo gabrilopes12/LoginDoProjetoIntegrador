@@ -4,6 +4,8 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,13 +16,14 @@ public class Pergunta1 extends javax.swing.JFrame {
     int contador = 0;
     int id_aluno;
     private Usuario usuario;
+ 
 
     /**
      * Creates new form Pergunta1
      */
     public Pergunta1(int id_aluno,int contador, Usuario usuario) {
         this.id_aluno = id_aluno;
-        this.usuario = usuario; 
+        this.usuario = usuario;
         
         initComponents();
         JOptionPane.showMessageDialog(null,id_aluno);
@@ -167,11 +170,22 @@ public class Pergunta1 extends javax.swing.JFrame {
     }//GEN-LAST:event_alernativaDfield1ActionPerformed
 
     private void alternativaAButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaAButtonActionPerformed
-        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
-        contador++;
-        Pergunta2 tela2 = new Pergunta2(id_aluno,contador,usuario);
-        tela2.setVisible(true);
-        this.dispose();
+//        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
+//        contador++;
+//        Pergunta2 tela2 = new Pergunta2(id_aluno,contador,usuario);
+//        tela2.setVisible(true);
+//        this.dispose();
+
+          telaTestePerguntasAleatoria tp = null;
+        try {
+              
+            tp = new telaTestePerguntasAleatoria();
+        } catch (Exception ex) {
+            Logger.getLogger(Pergunta1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          tp.setVisible(true);
+          this.dispose(); 
+          
     }//GEN-LAST:event_alternativaAButtonActionPerformed
 
     private void alternativaBButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaBButtonActionPerformed

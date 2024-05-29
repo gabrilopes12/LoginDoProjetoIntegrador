@@ -64,13 +64,10 @@ public class DAO {
    }
 }
     public void escolhePergunta(construtorPergunta pergunta) throws Exception{
-        String sql = "SELECT enunciado,questaoA, questaoB, questaoC, questaoD FROM questoes WHERE id_orgao = ? ORDER BY RAND()"; 
+        String sql = "SELECT enunciado,questaoA, questaoB, questaoC, questaoD, resposta FROM questoes WHERE id_orgao = ? ORDER BY RAND()"; 
         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
-             ps.setString(1, pergunta.pegarEnunciado());
-             ps.setString(2,pergunta.pegarQuestaoA());  
-             ps.setString(3,pergunta.pegarQuestaoB()); 
-             ps.setString(4,pergunta.pegarQuestaoC());
-             ps.setString(5,pergunta.pegarQuestaoD()); 
+             ps.setInt(1, pergunta.pegarIDOrgao()); 
+             
              ResultSet rs = ps.executeQuery();
              if (rs.next()) {
                   String texto = rs.getString("enunciado");
@@ -80,9 +77,11 @@ public class DAO {
                   String texto2 = rs.getString("questaoB");
                   pergunta.definaQuestaoB(texto2);
                   String texto3 = rs.getString("questaoC");
-                  pergunta.definaQuestaoA(texto3);
+                  pergunta.definaQuestaoC(texto3);
                   String texto4 = rs.getString("questaoD");
                   pergunta.definaQuestaoD(texto4);
+                  int resposta = rs.getInt("resposta");
+                  pergunta.definaResposta(resposta);
                   
         } 
          
