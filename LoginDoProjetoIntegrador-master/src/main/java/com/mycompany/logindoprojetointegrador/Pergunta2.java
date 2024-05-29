@@ -13,12 +13,15 @@ import javax.swing.JOptionPane;
 public class Pergunta2 extends javax.swing.JFrame {
     int contador;
     int id_aluno;
+    private Usuario usuario;
+    
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta2(int id_aluno, int contador) {
+    public Pergunta2(int id_aluno, int contador, Usuario usuario) {
         this.id_aluno = id_aluno;
         this.contador = contador;
+        this.usuario = usuario; 
         initComponents();
         JOptionPane.showMessageDialog(null,id_aluno);
     }
@@ -179,7 +182,7 @@ public class Pergunta2 extends javax.swing.JFrame {
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        Pergunta3 tela3 = new Pergunta3(id_aluno,contador);
+        Pergunta3 tela3 = new Pergunta3(id_aluno,contador,usuario);
         tela3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
@@ -214,8 +217,13 @@ public class Pergunta2 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Usuario usuario) {
+                new Pergunta2(0, 0,usuario).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new Pergunta2(0, 0).setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
 
         });

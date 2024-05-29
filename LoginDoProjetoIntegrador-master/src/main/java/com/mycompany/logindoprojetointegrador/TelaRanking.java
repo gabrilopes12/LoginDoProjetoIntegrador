@@ -17,20 +17,29 @@ public class TelaRanking extends javax.swing.JFrame {
     /**
      * Creates new form TelaRanking
      */
-    public TelaRanking(int id_aluno, int contador) {
+    public TelaRanking(int id_aluno, int contador, Usuario usuario) throws Exception {
         this.contador = contador;
         this.id_aluno = id_aluno;
         initComponents();
         
         DAO dao = new DAO(); 
-        try{
-             dao.inserirRanking(contador,id_aluno);
-        }
-        catch(Exception e){
-           JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
-            e.printStackTrace();
-        }
+// Desativei para não lotar o bd nos testes mas está funcionando
+//        try{
+//             dao.inserirRanking(contador,id_aluno);
+//        }
+//        catch(Exception e){
+//           JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+//            e.printStackTrace();
+//        }
+        
+        // construir os if's e definir as labels
+        int defineTop = dao.verificaTOP();
+        JOptionPane.showMessageDialog(null, dao.exibeRanking(usuario));
+
+        
     }
+
+ 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -123,8 +132,13 @@ public class TelaRanking extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Usuario usuario) throws Exception {
+                new TelaRanking(0, 0,usuario).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new TelaRanking(0, 0).setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
     }

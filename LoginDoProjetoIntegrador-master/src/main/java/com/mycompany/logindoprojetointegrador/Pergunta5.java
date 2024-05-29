@@ -4,6 +4,8 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,13 +15,15 @@ import javax.swing.JOptionPane;
 public class Pergunta5 extends javax.swing.JFrame {
     int contador = 0;
     int id_aluno;
+    private Usuario usuario;
 
     /**
      * Creates new form Pergunta1
      */
-    public Pergunta5(int id_aluno, int contador) {
+    public Pergunta5(int id_aluno, int contador, Usuario usuario) {
         this.contador = contador;
         this.id_aluno = id_aluno;
+        this.usuario = usuario; 
         JOptionPane.showMessageDialog(null,id_aluno);
         initComponents();
     }
@@ -177,7 +181,13 @@ public class Pergunta5 extends javax.swing.JFrame {
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
          JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        TelaRanking tela6 = new TelaRanking(id_aluno,contador);
+        TelaRanking tela6 = null;
+        try {
+            
+            tela6 = new TelaRanking(id_aluno,contador,usuario);
+        } catch (Exception ex) {
+            Logger.getLogger(Pergunta5.class.getName()).log(Level.SEVERE, null, ex);
+        }
         tela6.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed
@@ -230,8 +240,13 @@ public class Pergunta5 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Usuario usuario) {
+                new Pergunta5(0, 0, usuario).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new Pergunta5(0, 0).setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
     }

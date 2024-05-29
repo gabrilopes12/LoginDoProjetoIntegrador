@@ -75,20 +75,56 @@ public class DAO {
     
     public int verificaID(Usuario usuario) throws Exception{
         int id_aluno = 0; 
-        String sql = "SELECT id_aluno FROM aluno WHERE email = ?"; 
+        String sql = "SELECT id_aluno, nome FROM aluno WHERE email = ?"; 
          try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
              ps.setString(1,usuario.pegaremail());
              ResultSet rs = ps.executeQuery();
              
              if (rs.next()) {
                   id_aluno = rs.getInt("id_aluno");
+                  usuario.definaID(id_aluno);
+                  
                  
             }
         }
         return id_aluno;
              
          }
-    }
+    
+        public String exibeRanking(Usuario usuario) throws Exception{
+            String nome = null;
+            String sql = "select nome from aluno as a join ranking as r on a.id_aluno = r.id_aluno where a.id_aluno = ?  order by r.pontuacao;"; 
+            try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setInt(1,usuario.pegarID());
+             ResultSet rs = ps.executeQuery();
+             if (rs.next()) {
+                  nome = rs.getString("nome");
+                 
+            }
+        }
+        return nome;
+        }
+    
+       public int verificaTOP() throws Exception{
+        int pontuacao = 0; 
+        String sql = "SELECT pontuacao FROM ranking "; 
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             
+             ResultSet rs = ps.executeQuery();
+             
+             if (rs.next()) {
+                  pontuacao = rs.getInt("pontuacao");
+                  
+                 
+            }
+        }
+        return pontuacao;
+             
+         }
+       
+
+}
+
 
 
 

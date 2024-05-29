@@ -12,13 +12,17 @@ import javax.swing.JOptionPane;
  */
 public class telaTeste extends javax.swing.JFrame {
    int id_aluno = 0; 
+   private Usuario usuario;
+   
     /**
      * Creates new form telaTeste
      * @param usuario
      */
-    public telaTeste(Usuario usuario) throws Exception {
+  
+   
+   public telaTeste(Usuario usuario) throws Exception {
         try{
-             
+            this.usuario = usuario;
             DAO dao = new DAO();
             int ousuario = dao.verificaID(usuario);
             id_aluno = ousuario;
@@ -29,8 +33,11 @@ public class telaTeste extends javax.swing.JFrame {
             JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
             e.printStackTrace();
         }
+        
         initComponents();
     }
+
+   
 
 
     /**
@@ -65,7 +72,7 @@ public class telaTeste extends javax.swing.JFrame {
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
         int contador = 0;
-        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno,contador);
+        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno,contador,usuario);
         telaDaPergunta1.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jogarButtonActionPerformed
