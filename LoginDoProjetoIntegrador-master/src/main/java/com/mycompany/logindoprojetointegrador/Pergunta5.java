@@ -141,7 +141,7 @@ public class Pergunta5 extends javax.swing.JFrame {
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("FARINGE");
-        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 190, 80));
+        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 280, 80));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome (1).png"))); // NOI18N
@@ -179,15 +179,9 @@ public class Pergunta5 extends javax.swing.JFrame {
     }//GEN-LAST:event_alternativaCButtonActionPerformed
 
     private void alternativaDButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alternativaDButtonActionPerformed
-         JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
+        JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
         contador++;
-        TelaRanking tela6 = null;
-        try {
-            
-            tela6 = new TelaRanking(id_aluno,contador,usuario);
-        } catch (Exception ex) {
-            Logger.getLogger(Pergunta5.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Pergunta6 tela6 = new Pergunta6(id_aluno,contador, usuario);
         tela6.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_alternativaDButtonActionPerformed

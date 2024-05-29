@@ -140,7 +140,7 @@ public class Pergunta1 extends javax.swing.JFrame {
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("BOCA");
-        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 130, 80));
+        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 50, 180, 80));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome.png"))); // NOI18N

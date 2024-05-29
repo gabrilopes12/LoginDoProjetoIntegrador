@@ -39,12 +39,11 @@ public class Pergunta2 extends javax.swing.JFrame {
         alernativaCfield1 = new javax.swing.JTextField();
         alernativaBfield1 = new javax.swing.JTextField();
         alternativaAButton = new javax.swing.JButton();
+        jTextArea1 = new javax.swing.JTextArea();
         alternativaBButton = new javax.swing.JButton();
         alternativaCButton = new javax.swing.JButton();
         alternativaDButton = new javax.swing.JButton();
         jTextArea2 = new javax.swing.JTextArea();
-        enunciadoPane = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         tituloLabel = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -90,6 +89,17 @@ public class Pergunta2 extends javax.swing.JFrame {
         });
         getContentPane().add(alternativaAButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 80, 80));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setTabSize(6);
+        jTextArea1.setText("A saliva é uma substância incolor lançada na boca pelas \nglândulas salivares. \nEntre as funções a seguir, \nqual não pode ser atribuída à saliva? ");
+        jTextArea1.setAutoscrolls(false);
+        jTextArea1.setBorder(null);
+        getContentPane().add(jTextArea1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 130, -1, -1));
+
         alternativaBButton.setContentAreaFilled(false);
         alternativaBButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         alternativaBButton.addActionListener(new java.awt.event.ActionListener() {
@@ -125,23 +135,10 @@ public class Pergunta2 extends javax.swing.JFrame {
         jTextArea2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
         getContentPane().add(jTextArea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 510, 240, 90));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Helvetica Neue", 0, 24)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setTabSize(6);
-        jTextArea1.setText("A saliva é uma substância incolor lançada na boca pelas \nglândulas salivares. \nEntre as funções a seguir, \nqual não pode ser atribuída à saliva? ");
-        jTextArea1.setAutoscrolls(false);
-        jTextArea1.setBorder(null);
-        enunciadoPane.setViewportView(jTextArea1);
-
-        getContentPane().add(enunciadoPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 670, 150));
-
         tituloLabel.setFont(new java.awt.Font("HeadLineA", 2, 60)); // NOI18N
         tituloLabel.setForeground(new java.awt.Color(255, 153, 153));
         tituloLabel.setText("BOCA");
-        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 130, 80));
+        getContentPane().add(tituloLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 60, 190, 80));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome.png"))); // NOI18N
@@ -237,7 +234,6 @@ public class Pergunta2 extends javax.swing.JFrame {
     private javax.swing.JButton alternativaBButton;
     private javax.swing.JButton alternativaCButton;
     private javax.swing.JButton alternativaDButton;
-    private javax.swing.JScrollPane enunciadoPane;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
