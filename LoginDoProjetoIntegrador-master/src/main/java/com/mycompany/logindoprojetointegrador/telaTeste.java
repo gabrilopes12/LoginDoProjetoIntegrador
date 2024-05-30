@@ -4,6 +4,8 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -71,10 +73,15 @@ public class telaTeste extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
-        int contador = 0;
-        Pergunta1 telaDaPergunta1 = new Pergunta1(id_aluno,contador,usuario);
-        telaDaPergunta1.setVisible(true);
-        this.dispose();
+       int contador = 0;
+       telaTestePerguntasAleatoria tp = null;
+       try {
+           tp = new telaTestePerguntasAleatoria(id_aluno,contador,usuario);
+       } catch (Exception ex) {
+           Logger.getLogger(telaTeste.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        tp.setVisible(true);
+        this.dispose(); 
     }//GEN-LAST:event_jogarButtonActionPerformed
 
     /**

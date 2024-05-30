@@ -105,6 +105,23 @@ public class DAO {
         return id_aluno;
              
          }
+       public int verificaIDProfessor(Usuario usuario) throws Exception{
+        int id_professor = 0; 
+        String sql = "SELECT id_professor, nome FROM professor WHERE email = ?"; 
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setString(1,usuario.pegaremail());
+             ResultSet rs = ps.executeQuery();
+             
+             if (rs.next()) {
+                  id_professor = rs.getInt("id_professor");
+                  usuario.definaIDProfessor(id_professor);
+                  
+                 
+            }
+        }
+        return id_professor;
+             
+         }
     
         public String exibeRanking(Usuario usuario) throws Exception{
             String nome = null;
@@ -150,8 +167,67 @@ public class DAO {
         return nomes;
              
          }
+       
+       public void inserirPergunta(construtorPergunta pergunta, Usuario usuario) throws Exception{
+       String sql = "INSERT INTO questoes(enunciado,id_professor,questaoA, questaoB, questaoC, questaoD, id_orgao,resposta) VALUES (?,?,?,?,?,?,?,?)";
+         try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+             ps.setString(1,pergunta.pegarEnunciado());
+             ps.setInt(2,usuario.pegarIDProfessor());
+             ps.setString(3,pergunta.pegarQuestaoA());  
+             ps.setString(4,pergunta.pegarQuestaoB());
+             ps.setString(5,pergunta.pegarQuestaoC());
+             ps.setString(6,pergunta.pegarQuestaoD()); 
+             ps.setInt(7,pergunta.pegarIDOrgao());
+             ps.setInt(8,pergunta.pegarResposta());
+              
+             ps.execute(); 
+         }
+       
+     }
+     
+      public construtorPergunta[] obterOrgaos() throws Exception {
+      String sql = "SELECT*FROM orgao";
+      try(Connection conn = ConexaoBd.obterConexao(); PreparedStatement ps = conn.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);ResultSet rs = ps.executeQuery()){
+          
+          int totalDeCursos = rs.last () ? rs.getRow() : 0;
+          construtorPergunta [] pergunta = new construtorPergunta[totalDeCursos];
+          rs.beforeFirst();
+            int contador = 0;
+        while (rs.next()){
+            int id = rs.getInt("id_orgao"); 
+            String nome = rs.getString("nome");
+            pergunta[contador++] = new construtorPergunta (id, nome);
 
+                           }
+        return pergunta; 
+      }
+    }
+   
+        public List <Usuario> buscaAlunos() throws Exception{
+        String sql = "SELECT nome, email FROM aluno";
+        
+        List <Usuario> aluno = new ArrayList <> ();
+        try(Connection conexao = ConexaoBd.obterConexao(); PreparedStatement ps = conexao.prepareStatement(sql)){
+        
+        try (ResultSet rs = ps.executeQuery()){
+            while (rs.next()){
+                String nome = rs.getString ("nome");
+                String email = rs.getString ("email");
+                System.out.println("Nome: " + nome + ", Email: " + email);
+                aluno.add(new Usuario( nome, email,null));
+        }
+        
+       }
+        }
+      return aluno;
+    }
 }
+  
+
+
+
+   
+
 
 
 

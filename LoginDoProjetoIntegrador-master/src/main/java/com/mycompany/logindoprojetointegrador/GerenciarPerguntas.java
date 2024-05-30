@@ -64,9 +64,9 @@ public class GerenciarPerguntas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-        TelaProfessor telaDoProf = new TelaProfessor();
-        telaDoProf.setVisible(true);
-        this.dispose();
+//        TelaProfessor telaDoProf = new TelaProfessor();
+//        telaDoProf.setVisible(true);
+//        this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
     /**

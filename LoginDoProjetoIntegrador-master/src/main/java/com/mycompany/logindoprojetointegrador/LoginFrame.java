@@ -107,7 +107,8 @@ public class LoginFrame extends javax.swing.JFrame {
             DAO dao = new DAO();
             if(dao.verificaProfessor(usuario)){
                 JOptionPane.showMessageDialog (null, "Bem vindo professor!");
-                TelaProfessor tTP = new TelaProfessor(); // tela do professor
+                Usuario usuarioP = new Usuario(email);
+                TelaProfessor tTP = new TelaProfessor(usuarioP); // tela do professor
                 tTP.setVisible(true);
                 this.dispose();
             
@@ -117,8 +118,8 @@ public class LoginFrame extends javax.swing.JFrame {
             if(dao.existe(usuario)){
                 JOptionPane.showMessageDialog (null, "Bem vindo!");
                 // usar um comando que acessa a base de dados com um select e pega o id do usuario inserido
-                Usuario usuariof = new Usuario(email);
-                telaTeste tT = new telaTeste(usuariof); // tela de incio do jogo 
+                Usuario usuarioA = new Usuario(email);
+                telaTeste tT = new telaTeste(usuarioA); // tela de incio do jogo 
                 tT.setVisible(true);
                 this.dispose();
             }

@@ -7,6 +7,7 @@ package com.mycompany.logindoprojetointegrador;
  */
 public class Usuario {
    private int id_aluno;
+   private int id_professor;
    private String nome;
    private String email; // criei essa variravel para podermos destinguir email de nome na tela de cadastro e não ficar confuso
    private String senha;
@@ -62,4 +63,12 @@ public Usuario(String email){
         this.id_aluno = id_aluno; 
        
 }
+    public int pegarIDProfessor(){
+        return id_professor; 
+    }
+    
+    public void definaIDProfessor(int id_professor){
+        this.id_professor = id_professor;
+    }
+
 }

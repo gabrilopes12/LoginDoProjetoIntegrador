@@ -16,21 +16,30 @@ public class construtorPergunta {
     private String questaoD;
     private int id_orgao; 
     private int resposta;
+    private int id_professor; 
+    private String NomeOrgao; 
     
-    public construtorPergunta(String enunciado, String questaoA, String questaoB, String questaoC, String questaoD){
+    public construtorPergunta(String enunciado,int id_professor, String questaoA, String questaoB, String questaoC, String questaoD, int id_orgao, int resposta){
         this.enunciado = enunciado; 
         this.questaoA = questaoA;
         this.questaoB = questaoB; 
         this.questaoC = questaoC;
         this.questaoD = questaoD;
+        this.id_professor = id_professor; 
+        this.id_orgao = id_orgao;
+        this.resposta = resposta; 
     }
     
     public construtorPergunta(){
         
     }
+     public construtorPergunta(int id_orgao){
+        
+    }
     
-    public construtorPergunta(int id_orgao){
+    public construtorPergunta(int id_orgao,String NomeOrgao){
         this.id_orgao = id_orgao; 
+        this.NomeOrgao = NomeOrgao; 
     }
 
     public String pegarEnunciado(){
@@ -88,5 +97,10 @@ public class construtorPergunta {
     
     public void definaResposta(int resposta){
         this.resposta = resposta; 
+    }
+    
+     @Override
+    public String toString() {
+        return NomeOrgao;  // ou qualquer outra representação de string que você desejar
     }
 }

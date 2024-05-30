@@ -4,16 +4,31 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author gabriel
  */
 public class TelaProfessor extends javax.swing.JFrame {
-
+    private Usuario usuario;
+    int id_professor = 0;
     /**
      * Creates new form TelaProfessor
      */
-    public TelaProfessor() {
+    public TelaProfessor(Usuario usuario) {
+        try{
+            this.usuario = usuario;
+            DAO dao = new DAO();
+            int professor = dao.verificaIDProfessor(usuario);
+            id_professor = professor;
+            
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog (null, "Problemas técnicos. Tente novamente mais tarde");
+            e.printStackTrace();
+        }
         initComponents();
     }
 
@@ -58,11 +73,13 @@ public class TelaProfessor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mostrarAlunosButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mostrarAlunosButtonActionPerformed
-        // TODO add your handling code here:
+       telaVerAlunos tva = new telaVerAlunos(usuario);
+       tva.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_mostrarAlunosButtonActionPerformed
 
     private void gerenciarPerguntasButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenciarPerguntasButtonActionPerformed
-        GerenciarPerguntas telaGerencia = new GerenciarPerguntas();
+        telaGerenciarPerguntas telaGerencia = new telaGerenciarPerguntas(usuario);
         telaGerencia.setVisible(true);
         this.dispose();
         
@@ -98,8 +115,13 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run(Usuario usuario) {
+                new TelaProfessor(usuario).setVisible(true);
+            }
+
+            @Override
             public void run() {
-                new TelaProfessor().setVisible(true);
+                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
             }
         });
     }
