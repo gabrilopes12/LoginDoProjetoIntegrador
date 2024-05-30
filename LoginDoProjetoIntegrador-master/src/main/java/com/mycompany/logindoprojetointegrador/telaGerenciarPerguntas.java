@@ -42,46 +42,58 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         campoAlternativaD = new javax.swing.JTextField();
         campoAlternativaB = new javax.swing.JTextField();
         botaoAdicionar = new javax.swing.JButton();
-        botaoRemover = new javax.swing.JButton();
+        botaoVoltar = new javax.swing.JButton();
         orgaos = new javax.swing.JComboBox<>();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
+        questaoDButton = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         campoEnunciado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoEnunciadoActionPerformed(evt);
             }
         });
+        getContentPane().add(campoEnunciado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 640, 100));
+        getContentPane().add(campoAlternativaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 640, 100));
+        getContentPane().add(campoAlternativaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 640, 100));
 
         campoAlternativaD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoAlternativaDActionPerformed(evt);
             }
         });
+        getContentPane().add(campoAlternativaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 530, 640, 100));
+        getContentPane().add(campoAlternativaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 640, 100));
 
-        botaoAdicionar.setText("Adcionar");
+        botaoAdicionar.setContentAreaFilled(false);
+        botaoAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         botaoAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAdicionarActionPerformed(evt);
             }
         });
+        getContentPane().add(botaoAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 320, 170, 120));
 
-        botaoRemover.setText("Voltar");
-        botaoRemover.addActionListener(new java.awt.event.ActionListener() {
+        botaoVoltar.setContentAreaFilled(false);
+        botaoVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botaoRemoverActionPerformed(evt);
+                botaoVoltarActionPerformed(evt);
             }
         });
+        getContentPane().add(botaoVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1060, 180, 170, 130));
 
         orgaos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 orgaosActionPerformed(evt);
             }
         });
+        getContentPane().add(orgaos, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 40, -1, -1));
 
         jRadioButton1.setText("A");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -89,78 +101,21 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
                 jRadioButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
         jRadioButton2.setText("B");
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, -1));
 
         jRadioButton3.setText("C");
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, -1, -1));
 
-        jRadioButton4.setText("D");
+        questaoDButton.setText("D");
+        questaoDButton.setAlignmentX(1.0F);
+        questaoDButton.setContentAreaFilled(false);
+        getContentPane().add(questaoDButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 570, 40, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(77, 77, 77)
-                        .addComponent(botaoAdicionar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addComponent(botaoRemover)
-                        .addGap(90, 90, 90))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(campoEnunciado)
-                                .addGap(69, 69, 69)
-                                .addComponent(orgaos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(41, 41, 41))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(campoAlternativaA)
-                                    .addComponent(campoAlternativaD, javax.swing.GroupLayout.DEFAULT_SIZE, 191, Short.MAX_VALUE)
-                                    .addComponent(campoAlternativaC)
-                                    .addComponent(campoAlternativaB))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jRadioButton3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jRadioButton4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jRadioButton1, javax.swing.GroupLayout.Alignment.TRAILING))))))
-                .addGap(19, 19, 19))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(orgaos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoEnunciado, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(campoAlternativaA, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoAlternativaB, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(campoAlternativaC, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(campoAlternativaD, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(botaoAdicionar)
-                            .addComponent(botaoRemover)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton3)
-                        .addGap(18, 18, 18)
-                        .addComponent(jRadioButton4)))
-                .addContainerGap(35, Short.MAX_VALUE))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gerencia Pergunta.jpeg"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -214,12 +169,12 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
       
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
-    private void botaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverActionPerformed
+    private void botaoVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVoltarActionPerformed
         TelaProfessor tl = new TelaProfessor(usuario);
         tl.setVisible(true);
         this.dispose();
         
-    }//GEN-LAST:event_botaoRemoverActionPerformed
+    }//GEN-LAST:event_botaoVoltarActionPerformed
 
     private void campoAlternativaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAlternativaDActionPerformed
         // TODO add your handling code here:
@@ -248,13 +203,13 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         buttonGroup.add(jRadioButton1);
         buttonGroup.add(jRadioButton2);
         buttonGroup.add(jRadioButton3);
-        buttonGroup.add(jRadioButton4);
+        buttonGroup.add(questaoDButton);
 
         // Definir ActionCommands
         jRadioButton1.setActionCommand("1");
         jRadioButton2.setActionCommand("2");
         jRadioButton3.setActionCommand("3");
-        jRadioButton4.setActionCommand("4");
+        questaoDButton.setActionCommand("4");
 
         // Adicionar ActionListeners
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -272,7 +227,7 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
                 jRadioButtonActionPerformed(evt);
             }
         });
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        questaoDButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonActionPerformed(evt);
             }
@@ -328,16 +283,17 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAdicionar;
-    private javax.swing.JButton botaoRemover;
+    private javax.swing.JButton botaoVoltar;
     private javax.swing.JTextField campoAlternativaA;
     private javax.swing.JTextField campoAlternativaB;
     private javax.swing.JTextField campoAlternativaC;
     private javax.swing.JTextField campoAlternativaD;
     private javax.swing.JTextField campoEnunciado;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JComboBox<String> orgaos;
+    private javax.swing.JRadioButton questaoDButton;
     // End of variables declaration//GEN-END:variables
 }
