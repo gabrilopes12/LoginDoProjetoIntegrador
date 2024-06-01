@@ -74,6 +74,8 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(voltarLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 260, 20));
 
+        jButton3.setBackground(new java.awt.Color(204, 153, 255));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Play");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +84,8 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 30));
 
+        jButton4.setBackground(new java.awt.Color(204, 153, 255));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Pause");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,6 +94,8 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 70, 30));
 
+        jButton5.setBackground(new java.awt.Color(204, 153, 255));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Resume");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,6 +104,8 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 80, 30));
 
+        jButton6.setBackground(new java.awt.Color(204, 153, 255));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setText("+");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +114,8 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 40, 30));
 
+        jButton7.setBackground(new java.awt.Color(204, 153, 255));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setText("-");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,8 +257,6 @@ public class CadastroFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField emailCadastroField;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;

@@ -1,3 +1,4 @@
+com\mycompany\logindoprojetointegrador\LoginFrame$6.class
 com\mycompany\logindoprojetointegrador\MusicPlayer.class
 com\mycompany\logindoprojetointegrador\GerenciarPerguntas$1.class
 com\mycompany\logindoprojetointegrador\TelaProfessor$1.class
@@ -12,8 +13,10 @@ com\mycompany\logindoprojetointegrador\telaVerAlunos$1.class
 com\mycompany\logindoprojetointegrador\telaVerAlunos$AlunosPorCursoTableModel.class
 com\mycompany\logindoprojetointegrador\GerenciarPerguntas$2.class
 com\mycompany\logindoprojetointegrador\telaTestePerguntasAleatoria$1.class
+com\mycompany\logindoprojetointegrador\LoginFrame$7.class
 com\mycompany\logindoprojetointegrador\CadastroFrame$5.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$9.class
+com\mycompany\logindoprojetointegrador\LoginFrame$10.class
 com\mycompany\logindoprojetointegrador\TelaRanking$1.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$5.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$2.class
@@ -23,6 +26,7 @@ com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$10.class
 com\mycompany\logindoprojetointegrador\CadastroFrame$8.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$8.class
 com\mycompany\logindoprojetointegrador\telaTestePerguntasAleatoria$5.class
+com\mycompany\logindoprojetointegrador\LoginFrame$8.class
 com\mycompany\logindoprojetointegrador\TelaProfessor$3.class
 com\mycompany\logindoprojetointegrador\telaVerAlunos$3.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$7.class
@@ -31,6 +35,7 @@ com\mycompany\logindoprojetointegrador\CadastroFrame$7.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas.class
 com\mycompany\logindoprojetointegrador\TelaProfessor$2.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$11.class
+com\mycompany\logindoprojetointegrador\LoginFrame$9.class
 com\mycompany\logindoprojetointegrador\telaGerenciarPerguntas$4.class
 com\mycompany\logindoprojetointegrador\TelaProfessor.class
 com\mycompany\logindoprojetointegrador\telaTestePerguntasAleatoria.class
