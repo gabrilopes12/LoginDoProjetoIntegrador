@@ -73,15 +73,26 @@ public class telaTeste extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jogarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jogarButtonActionPerformed
+//       int contador = 0;
+//       telaTestePerguntasAleatoria tp = null;
+//       try {
+//           tp = new telaTestePerguntasAleatoria(id_aluno,contador,usuario);
+//       } catch (Exception ex) {
+//           Logger.getLogger(telaTeste.class.getName()).log(Level.SEVERE, null, ex);
+//       }
+//        tp.setVisible(true);
+//        this.dispose(); 
+          
        int contador = 0;
-       telaTestePerguntasAleatoria tp = null;
+       Boca boca = null;
        try {
-           tp = new telaTestePerguntasAleatoria(id_aluno,contador,usuario);
+           boca = new Boca(id_aluno,contador,usuario);
        } catch (Exception ex) {
            Logger.getLogger(telaTeste.class.getName()).log(Level.SEVERE, null, ex);
        }
-        tp.setVisible(true);
+        boca.setVisible(true);
         this.dispose(); 
+        
     }//GEN-LAST:event_jogarButtonActionPerformed
 
     /**
