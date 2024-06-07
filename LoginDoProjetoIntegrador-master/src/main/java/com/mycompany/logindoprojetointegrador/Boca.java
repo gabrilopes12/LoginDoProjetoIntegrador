@@ -83,35 +83,35 @@ public class Boca extends javax.swing.JFrame {
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(524, 90, 220, 80));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 80, 310, 140));
 
         jTextArea3.setEditable(false);
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 130, 34));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 150, 60));
 
         jTextArea5.setEditable(false);
         jTextArea5.setColumns(20);
         jTextArea5.setRows(5);
         jScrollPane5.setViewportView(jTextArea5);
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 130, 31));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 150, 50));
 
         jTextArea6.setEditable(false);
         jTextArea6.setColumns(20);
         jTextArea6.setRows(5);
         jScrollPane6.setViewportView(jTextArea6);
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 139, 34));
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 160, 70));
 
         jTextArea7.setEditable(false);
         jTextArea7.setColumns(20);
         jTextArea7.setRows(5);
         jScrollPane7.setViewportView(jTextArea7);
 
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 139, 31));
+        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 160, 60));
 
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -144,8 +144,6 @@ public class Boca extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, 80, 80));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Bruno\\OneDrive\\Área de Trabalho\\BOCA.png")); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1370, 720));
 
         pack();
@@ -223,22 +221,22 @@ public class Boca extends javax.swing.JFrame {
        
        
         dao.escolhePergunta(pergunta);
-        jTextArea1.setText(pergunta.pegarEnunciado());
-        jTextArea2.setText(pergunta.pegarQuestaoA());
-        jTextArea3.setText(pergunta.pegarQuestaoB());
-        jTextArea4.setText(pergunta.pegarQuestaoC());
-        jTextArea5.setText(pergunta.pegarQuestaoD()); 
+        jTextArea2.setText(pergunta.pegarEnunciado());
+        jTextArea3.setText(pergunta.pegarQuestaoA());
+        jTextArea5.setText(pergunta.pegarQuestaoB());
+        jTextArea6.setText(pergunta.pegarQuestaoC());
+        jTextArea7.setText(pergunta.pegarQuestaoD()); 
        
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setWrapStyleWord(true);
         jTextArea2.setLineWrap(true);
         jTextArea2.setWrapStyleWord(true);
         jTextArea3.setLineWrap(true);
         jTextArea3.setWrapStyleWord(true);
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setWrapStyleWord(true);
         jTextArea5.setLineWrap(true);
         jTextArea5.setWrapStyleWord(true);
+        jTextArea6.setLineWrap(true);
+        jTextArea6.setWrapStyleWord(true);
+        jTextArea7.setLineWrap(true);
+        jTextArea7.setWrapStyleWord(true);
     }
     
       
