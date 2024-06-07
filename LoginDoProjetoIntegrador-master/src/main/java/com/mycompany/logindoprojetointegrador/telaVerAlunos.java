@@ -5,6 +5,8 @@
 package com.mycompany.logindoprojetointegrador;
 
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.AbstractTableModel;
 
@@ -14,11 +16,15 @@ import javax.swing.table.AbstractTableModel;
  */
 public class telaVerAlunos extends javax.swing.JFrame {
 private Usuario usuario; 
+private int id_aluno = 1;
+private int contador = 0;
+
     /**
      * Creates new form telaVerAlunos
      */
     public telaVerAlunos(Usuario usuario) {
         initComponents();
+        setLocationRelativeTo(null);
         this.usuario = usuario; 
         try{
             this.tabelaAlunos.setModel(new AlunosPorCursoTableModel());
@@ -47,6 +53,7 @@ private Usuario usuario;
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -87,6 +94,7 @@ private Usuario usuario;
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red play.png"))); // NOI18N
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -98,6 +106,7 @@ private Usuario usuario;
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red pause.png"))); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -109,6 +118,7 @@ private Usuario usuario;
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red diminuir.png"))); // NOI18N
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -120,12 +130,22 @@ private Usuario usuario;
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red aumentar.png"))); // NOI18N
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 40, 40));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verRank - Copia.png"))); // NOI18N
+        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 3));
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 30, 210, 70));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ver alunos.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 700));
@@ -159,6 +179,17 @@ private Usuario usuario;
         // aumentar volume
         MusicPlayer.increaseVolume();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+                TelaRankingProfessor tr = null;
+    try {
+        tr = new TelaRankingProfessor(usuario);
+    } catch (Exception ex) {
+        Logger.getLogger(telaVerAlunos.class.getName()).log(Level.SEVERE, null, ex);
+    }
+                tr.setVisible(true);
+                this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public class AlunosPorCursoTableModel extends AbstractTableModel {
         private List <Usuario> alunos;
@@ -236,6 +267,7 @@ private Usuario usuario;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

@@ -4,7 +4,10 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.awt.Font;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,6 +17,7 @@ import javax.swing.JOptionPane;
 public class TelaRanking extends javax.swing.JFrame {
     int contador = 0;
     int id_aluno;
+    private Usuario usuario; 
 
     /**
      * Creates new form TelaRanking
@@ -21,7 +25,10 @@ public class TelaRanking extends javax.swing.JFrame {
     public TelaRanking(int id_aluno, int contador, Usuario usuario) throws Exception {
         this.contador = contador;
         this.id_aluno = id_aluno;
+        this.usuario = usuario; 
         initComponents();
+        jLabel3.setText(Integer.toString(contador)); 
+        setLocationRelativeTo(null);
         
         DAO dao = new DAO(); 
  // Desativei para não lotar o bd nos testes mas está funcionando
@@ -36,8 +43,6 @@ public class TelaRanking extends javax.swing.JFrame {
         // construir os if's e definir as labels
         List<Integer> top5Pontuacoes = dao.verificaTOP5(); 
         List<String> top5Nomes = dao.verificaNOMETOP5();
-        JOptionPane.showMessageDialog (null,top5Pontuacoes); 
-        JOptionPane.showMessageDialog (null,top5Nomes);
 
         nome1Label.setText("");
         pontuacao1Label.setText("");
@@ -118,39 +123,38 @@ public class TelaRanking extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nome1Label.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(nome1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 240, 70));
-        getContentPane().add(pontuacao1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 160, 250, 60));
+        getContentPane().add(nome1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 160, 50));
+        nome1Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(pontuacao1Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 160, 130, 60));
+        pontuacao1Label.setFont(new Font("Arial", Font.PLAIN, 18));
 
         nome2Label.setBackground(new java.awt.Color(0, 0, 0));
-        nome2Label.setText("label do nome");
         getContentPane().add(nome2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 160, 50));
-
-        pontuacao2Label.setText("label da pontuacao");
-        getContentPane().add(pontuacao2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 270, 120, 40));
-
-        pontuacao5Label.setText("label da pontuacao");
-        getContentPane().add(pontuacao5Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 590, -1, -1));
-
-        nome5Label.setText("label do nome");
-        getContentPane().add(nome5Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 590, -1, -1));
-
-        pontuacao4Label.setText("label da pontuacao");
-        getContentPane().add(pontuacao4Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, -1, -1));
-
-        nome4Label.setText("label do nome");
-        getContentPane().add(nome4Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 490, -1, -1));
-
-        pontuacao3Label.setText("label da pontuacao");
-        getContentPane().add(pontuacao3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, -1, -1));
-
-        nome3Label.setText("label do nome");
-        getContentPane().add(nome3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
+        nome2Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(pontuacao2Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 270, 130, 60));
+        pontuacao2Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(pontuacao5Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 590, 130, 60));
+        pontuacao5Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(nome5Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 590, 160, 50));
+        nome5Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(pontuacao4Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 490, 130, 60));
+        pontuacao4Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(nome4Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 490, 160, 50));
+        nome4Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(pontuacao3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 380, 130, 60));
+        pontuacao3Label.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(nome3Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 160, 50));
+        nome3Label.setFont(new Font("Arial", Font.PLAIN, 18));
 
         jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red play.png"))); // NOI18N
@@ -196,6 +200,33 @@ public class TelaRanking extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 40, 40));
 
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botaosair - Copia.png"))); // NOI18N
+        jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton9.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 630, 110, 40));
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/voltarbutton.png"))); // NOI18N
+        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 6, true));
+        jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 630, 130, 50));
+
+        jLabel2.setText("SUA PONTUAÇÃO:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 290, 30));
+        jLabel2.setFont(new Font("Arial", Font.PLAIN, 18));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 90, 80));
+        jLabel3.setFont(new Font("Arial", Font.PLAIN, 18));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Design sem nome (3).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1110, -1));
 
@@ -222,6 +253,29 @@ public class TelaRanking extends javax.swing.JFrame {
         // aumentar volume
         MusicPlayer.increaseVolume();
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja sair e voltar para a tela de login?","Sair!",JOptionPane.OK_CANCEL_OPTION);
+        if(escolha == JOptionPane.OK_OPTION){
+            LoginFrame lf = new LoginFrame();
+            lf.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja sair e voltar para a tela inicial?","Sair!",JOptionPane.OK_CANCEL_OPTION);
+        if(escolha == JOptionPane.OK_OPTION){
+        telaTeste tl = null;
+        try {
+            tl = new telaTeste(usuario);
+        } catch (Exception ex) {
+            Logger.getLogger(TelaRanking.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        tl.setVisible(true);
+        this.dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -266,11 +320,15 @@ public class TelaRanking extends javax.swing.JFrame {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel nome1Label;
     private javax.swing.JLabel nome2Label;
     private javax.swing.JLabel nome3Label;

@@ -4,6 +4,7 @@
  */
 package com.mycompany.logindoprojetointegrador;
 
+import java.awt.Font;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -26,6 +27,7 @@ public class Estomâgo extends javax.swing.JFrame {
     public Estomâgo (int id_aluno, int contador, Usuario usuario) throws Exception {
         
         initComponents();
+        setLocationRelativeTo(null);
         procuraPergunta();
         this.id_aluno = id_aluno;
         this.contador = contador;
@@ -61,6 +63,11 @@ public class Estomâgo extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
@@ -78,40 +85,62 @@ public class Estomâgo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
+
         jTextArea2.setEditable(false);
+        jTextArea2.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.setOpaque(false);
+        jTextArea2.setPreferredSize(new java.awt.Dimension(512, 214));
         jScrollPane2.setViewportView(jTextArea2);
+        jScrollPane2.setVerticalScrollBarPolicy(jScrollPane2.VERTICAL_SCROLLBAR_NEVER);
+        jTextArea2.setFont(new Font("Arial", Font.PLAIN, 18));
+        jTextArea2.setFocusable(false);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 70, 250, 80));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 530, 160));
 
         jTextArea3.setEditable(false);
+        jTextArea3.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea3.setColumns(20);
         jTextArea3.setRows(5);
         jScrollPane3.setViewportView(jTextArea3);
+        jScrollPane3.setVerticalScrollBarPolicy(jScrollPane3.VERTICAL_SCROLLBAR_NEVER);
+        jTextArea3.setFont(new Font("Arial", Font.PLAIN, 18));
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 130, 34));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 340, 360, 120));
 
         jTextArea5.setEditable(false);
+        jTextArea5.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea5.setColumns(20);
         jTextArea5.setRows(5);
         jScrollPane5.setViewportView(jTextArea5);
+        jScrollPane5.setVerticalScrollBarPolicy(jScrollPane5.VERTICAL_SCROLLBAR_NEVER);
+        jTextArea5.setFont(new Font("Arial", Font.PLAIN, 18));
 
-        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 130, 31));
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 560, 360, 100));
+
+        jScrollPane6.setBackground(new java.awt.Color(255, 255, 255));
 
         jTextArea6.setEditable(false);
+        jTextArea6.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea6.setColumns(20);
         jTextArea6.setRows(5);
         jScrollPane6.setViewportView(jTextArea6);
+        jScrollPane6.setVerticalScrollBarPolicy(jScrollPane6.VERTICAL_SCROLLBAR_NEVER);
+        jTextArea6.setFont(new Font("Arial", Font.PLAIN, 18));
 
-        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 139, 34));
+        getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 340, 360, 130));
 
         jTextArea7.setEditable(false);
+        jTextArea7.setBackground(new java.awt.Color(255, 255, 255));
         jTextArea7.setColumns(20);
         jTextArea7.setRows(5);
         jScrollPane7.setViewportView(jTextArea7);
+        jScrollPane7.setVerticalScrollBarPolicy(jScrollPane7.VERTICAL_SCROLLBAR_NEVER);
+        jTextArea7.setFont(new Font("Arial", Font.PLAIN, 18));
 
-        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 139, 31));
+        getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 560, 360, 110));
 
         jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -145,8 +174,61 @@ public class Estomâgo extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 530, 80, 80));
 
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red play.png"))); // NOI18N
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
+
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red pause.png"))); // NOI18N
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 40, 40));
+
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red diminuir.png"))); // NOI18N
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 40, 40));
+
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red aumentar.png"))); // NOI18N
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 40, 40));
+
+        jButton9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botaosair - Copia.png"))); // NOI18N
+        jButton9.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 110, 40));
+
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/ESTOMÂGO.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1310, 710));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,7 +237,7 @@ public class Estomâgo extends javax.swing.JFrame {
     try {
            validarResposta(3);
        } catch (Exception ex) {
-           Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
        }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -163,7 +245,7 @@ public class Estomâgo extends javax.swing.JFrame {
     try {
            validarResposta(4);
        } catch (Exception ex) {
-           Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
        }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -172,7 +254,7 @@ public class Estomâgo extends javax.swing.JFrame {
         try {
             validarResposta(2);
         } catch (Exception ex) {
-            Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -180,36 +262,64 @@ public class Estomâgo extends javax.swing.JFrame {
         try {
             validarResposta(1);
         } catch (Exception ex) {
-            Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
         }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // play music
+
+        MusicPlayer.playMusic("/gameMusic.wav");
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // pausar musica
+        MusicPlayer.pauseMusic();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // diminuir volume
+        MusicPlayer.decreaseVolume();
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // aumentar volume
+        MusicPlayer.increaseVolume();
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja sair e voltar para a tela de login?\n Atenção seu progresso não será salvo!","Sair!",JOptionPane.OK_CANCEL_OPTION);
+        if(escolha == JOptionPane.OK_OPTION){
+            LoginFrame lf = new LoginFrame();
+            lf.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton9ActionPerformed
    //Pegar isso 
     private void validarResposta(int resposta) throws Exception {
         if(resposta == pergunta.pegarResposta()){
             JOptionPane.showMessageDialog(null, "Parabéns, alternativa certa!");
             tentativa++;
             contador++;
-            if(tentativa >= 3) {
-                // Chamar próxima tela ou finalizar
-                //para fins de teste chamar a tela ranking 
-                TelaRanking tr = new TelaRanking(id_aluno,contador, usuario);
-                tr.setVisible(true);
+            if(tentativa >= 3) { 
+                Fígado figado = new Fígado(id_aluno,contador, usuario);
+                figado.setVisible(true);
                 this.dispose();
             } else {
                 try {
                     procuraPergunta();
                 } catch (Exception ex) {
-                    Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(null, "Alternativa errada, tente novamente!");
+            JOptionPane.showMessageDialog(null, "Alternativa errada!");
             contador--; 
             try {
                 procuraPergunta();
             } catch (Exception ex) {
-                Logger.getLogger(telaTestePerguntasAleatoria.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Estomâgo.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
@@ -223,22 +333,22 @@ public class Estomâgo extends javax.swing.JFrame {
        
        
         dao.escolhePergunta(pergunta);
-        jTextArea1.setText(pergunta.pegarEnunciado());
-        jTextArea2.setText(pergunta.pegarQuestaoA());
-        jTextArea3.setText(pergunta.pegarQuestaoB());
-        jTextArea4.setText(pergunta.pegarQuestaoC());
-        jTextArea5.setText(pergunta.pegarQuestaoD()); 
+        jTextArea2.setText(pergunta.pegarEnunciado());
+        jTextArea3.setText(pergunta.pegarQuestaoA());
+        jTextArea5.setText(pergunta.pegarQuestaoB());
+        jTextArea6.setText(pergunta.pegarQuestaoC());
+        jTextArea7.setText(pergunta.pegarQuestaoD()); 
        
-        jTextArea1.setLineWrap(true);
-        jTextArea1.setWrapStyleWord(true);
-        jTextArea2.setLineWrap(true);
+       jTextArea2.setLineWrap(true);
         jTextArea2.setWrapStyleWord(true);
         jTextArea3.setLineWrap(true);
         jTextArea3.setWrapStyleWord(true);
-        jTextArea4.setLineWrap(true);
-        jTextArea4.setWrapStyleWord(true);
         jTextArea5.setLineWrap(true);
         jTextArea5.setWrapStyleWord(true);
+        jTextArea6.setLineWrap(true);
+        jTextArea6.setWrapStyleWord(true);
+        jTextArea7.setLineWrap(true);
+        jTextArea7.setWrapStyleWord(true);
     }
     
       
@@ -290,6 +400,11 @@ public class Estomâgo extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;

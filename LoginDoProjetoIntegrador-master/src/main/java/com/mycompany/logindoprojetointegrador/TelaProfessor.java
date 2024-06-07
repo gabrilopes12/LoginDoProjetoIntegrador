@@ -30,6 +30,7 @@ public class TelaProfessor extends javax.swing.JFrame {
             e.printStackTrace();
         }
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -47,6 +48,7 @@ public class TelaProfessor extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -114,6 +116,15 @@ public class TelaProfessor extends javax.swing.JFrame {
         });
         getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/botaosair.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 8));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 540, 210, 90));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/BOM DIA PROFESSOR!.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 800));
 
@@ -154,6 +165,15 @@ public class TelaProfessor extends javax.swing.JFrame {
 
         MusicPlayer.playMusic("/gameMusic.wav");
     }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja sair e voltar para a tela de login?","Sair!",JOptionPane.OK_CANCEL_OPTION);
+        if(escolha == JOptionPane.OK_OPTION){
+            LoginFrame lf = new LoginFrame();
+            lf.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,6 +217,7 @@ public class TelaProfessor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton gerenciarPerguntasButton;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;

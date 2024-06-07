@@ -8,6 +8,7 @@ import javax.swing.ButtonGroup;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author User
@@ -16,11 +17,23 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup;
     private int valorSelecionado;
     private Usuario usuario;
+    
     /**
      * Creates new form telaGerenciarPerguntas
      */
     public telaGerenciarPerguntas(Usuario usuario) {
         initComponents();
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea2.setLineWrap(true);
+        jTextArea2.setWrapStyleWord(true);
+        jTextArea3.setLineWrap(true);
+        jTextArea3.setWrapStyleWord(true);
+        jTextArea4.setLineWrap(true);
+        jTextArea4.setWrapStyleWord(true);
+        jTextArea5.setLineWrap(true);
+        jTextArea5.setWrapStyleWord(true);
+        setLocationRelativeTo(null);
         buscarOrgaos(); 
         configurarButtonGroup();
         this.usuario = usuario; 
@@ -36,11 +49,6 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        campoEnunciado = new javax.swing.JTextField();
-        campoAlternativaA = new javax.swing.JTextField();
-        campoAlternativaC = new javax.swing.JTextField();
-        campoAlternativaD = new javax.swing.JTextField();
-        campoAlternativaB = new javax.swing.JTextField();
         botaoAdicionar = new javax.swing.JButton();
         botaoVoltar = new javax.swing.JButton();
         orgaos = new javax.swing.JComboBox<>();
@@ -52,27 +60,20 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextArea3 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextArea4 = new javax.swing.JTextArea();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextArea5 = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        campoEnunciado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEnunciadoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(campoEnunciado, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 640, 100));
-        getContentPane().add(campoAlternativaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 640, 100));
-        getContentPane().add(campoAlternativaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 640, 100));
-
-        campoAlternativaD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoAlternativaDActionPerformed(evt);
-            }
-        });
-        getContentPane().add(campoAlternativaD, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 530, 640, 100));
-        getContentPane().add(campoAlternativaB, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 640, 100));
 
         botaoAdicionar.setContentAreaFilled(false);
         botaoAdicionar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -108,10 +109,10 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         getContentPane().add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 170, -1, -1));
 
         jRadioButton2.setText("B");
-        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 290, -1, -1));
+        getContentPane().add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 300, -1, -1));
 
         jRadioButton3.setText("C");
-        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 440, -1, -1));
+        getContentPane().add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 430, -1, -1));
 
         questaoDButton.setText("D");
         questaoDButton.setAlignmentX(1.0F);
@@ -122,6 +123,7 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red play.png"))); // NOI18N
         jButton8.setBorderPainted(false);
         jButton8.setContentAreaFilled(false);
+        jButton8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -133,6 +135,7 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red pause.png"))); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.setContentAreaFilled(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -144,6 +147,7 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red diminuir.png"))); // NOI18N
         jButton7.setBorderPainted(false);
         jButton7.setContentAreaFilled(false);
+        jButton7.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -155,6 +159,7 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/red aumentar.png"))); // NOI18N
         jButton6.setBorderPainted(false);
         jButton6.setContentAreaFilled(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -162,27 +167,54 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 10, 40, 40));
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 640, 120));
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jScrollPane2.setViewportView(jTextArea2);
+
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 640, 120));
+
+        jTextArea3.setColumns(20);
+        jTextArea3.setRows(5);
+        jScrollPane3.setViewportView(jTextArea3);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 640, 120));
+
+        jTextArea4.setColumns(20);
+        jTextArea4.setRows(5);
+        jScrollPane4.setViewportView(jTextArea4);
+
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 400, 640, 120));
+
+        jTextArea5.setColumns(20);
+        jTextArea5.setRows(5);
+        jScrollPane5.setViewportView(jTextArea5);
+
+        getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 530, 640, 120));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Gerencia Pergunta.jpeg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1290, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoEnunciadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEnunciadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoEnunciadoActionPerformed
-
     private void orgaosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_orgaosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_orgaosActionPerformed
 
     private void botaoAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoAdicionarActionPerformed
-        String enunciado =  campoEnunciado.getText(); 
-        String alternativaA = campoAlternativaA.getText();
-        String alternativaB = campoAlternativaB.getText();
-        String alternativaC = campoAlternativaC.getText();
-        String alternativaD = campoAlternativaD.getText();
-        int id_orgao = orgaos.getSelectedIndex(); 
+        String enunciado =  jTextArea1.getText(); 
+        String alternativaA = jTextArea2.getText();
+        String alternativaB = jTextArea3.getText();
+        String alternativaC = jTextArea4.getText();
+        String alternativaD = jTextArea5.getText();
+        construtorPergunta orgaoSelecionado = (construtorPergunta) orgaos.getSelectedItem();
+        int id_orgao = orgaoSelecionado != null ? orgaoSelecionado.pegarIDOrgao() : -1;  
         int valorSelecionado1 = valorSelecionado;
         int id_professor = usuario.pegarIDProfessor(); 
         if(enunciado  == null|| enunciado.length() == 0 || alternativaA == null || alternativaA.length() == 0 || alternativaB == null || alternativaB.length() == 0 || alternativaC == null || alternativaC.length() == 0 || alternativaD == null || alternativaD.length() == 0 || valorSelecionado1 == 0){
@@ -198,11 +230,11 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
                         dao.inserirPergunta(pergunta,usuario);
                         JOptionPane.showMessageDialog(null, "Pergunta cadastrado com sucesso");
                         
-                        campoEnunciado.setText("");
-                        campoAlternativaA.setText("");
-                        campoAlternativaB.setText("");
-                        campoAlternativaC.setText("");
-                        campoAlternativaD.setText("");
+                        jTextArea1.setText("");
+                        jTextArea2.setText("");
+                        jTextArea3.setText("");
+                        jTextArea4.setText("");
+                        jTextArea5.setText("");
                         buscarOrgaos();  
                     }
             }
@@ -223,10 +255,6 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_botaoVoltarActionPerformed
-
-    private void campoAlternativaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoAlternativaDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoAlternativaDActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // play music
@@ -250,23 +278,23 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton6ActionPerformed
     
     private void buscarOrgaos(){
-        try{
+    try {
         DAO dao = new DAO();
         construtorPergunta[] perguntas = dao.obterOrgaos();
         
-        // Convertendo o array de construtorPergunta para um array de String
-        String[] nomes = new String[perguntas.length];
-        for (int i = 0; i < perguntas.length; i++) {
-            nomes[i] = perguntas[i].toString();
+        DefaultComboBoxModel<construtorPergunta> model = new DefaultComboBoxModel<>();
+        for (construtorPergunta pergunta : perguntas) {
+            model.addElement(pergunta);
         }
         
-        orgaos.setModel(new DefaultComboBoxModel<>(nomes));
-    }
-    catch (Exception e){
-        JOptionPane.showMessageDialog(null, "Cursos indisponíveis, tente novamente mais tarde.");
+        orgaos.setModel(model);
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(null, "Órgãos indisponíveis, tente novamente mais tarde.");
         e.printStackTrace();
     }
-    }
+}
+  
+    
       private void configurarButtonGroup() {
         buttonGroup = new javax.swing.ButtonGroup();
         buttonGroup.add(jRadioButton1);
@@ -353,11 +381,6 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAdicionar;
     private javax.swing.JButton botaoVoltar;
-    private javax.swing.JTextField campoAlternativaA;
-    private javax.swing.JTextField campoAlternativaB;
-    private javax.swing.JTextField campoAlternativaC;
-    private javax.swing.JTextField campoAlternativaD;
-    private javax.swing.JTextField campoEnunciado;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
@@ -366,7 +389,17 @@ public class telaGerenciarPerguntas extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JComboBox<String> orgaos;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextArea3;
+    private javax.swing.JTextArea jTextArea4;
+    private javax.swing.JTextArea jTextArea5;
+    private javax.swing.JComboBox<construtorPergunta> orgaos;
     private javax.swing.JRadioButton questaoDButton;
     // End of variables declaration//GEN-END:variables
 }

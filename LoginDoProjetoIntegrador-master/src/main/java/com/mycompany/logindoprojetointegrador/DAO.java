@@ -213,7 +213,6 @@ public class DAO {
             while (rs.next()){
                 String nome = rs.getString ("nome");
                 String email = rs.getString ("email");
-                System.out.println("Nome: " + nome + ", Email: " + email);
                 aluno.add(new Usuario( nome, email,null));
         }
         
