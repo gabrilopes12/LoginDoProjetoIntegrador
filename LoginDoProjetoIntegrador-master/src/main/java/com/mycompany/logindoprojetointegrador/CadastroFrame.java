@@ -39,7 +39,6 @@ public class CadastroFrame extends javax.swing.JFrame {
         voltarLoginButton = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -74,55 +73,49 @@ public class CadastroFrame extends javax.swing.JFrame {
         });
         getContentPane().add(voltarLoginButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, 260, 20));
 
-        jButton3.setBackground(new java.awt.Color(204, 153, 255));
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Play");
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Play.png"))); // NOI18N
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 60, 30));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 50, 40));
 
-        jButton4.setBackground(new java.awt.Color(204, 153, 255));
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("Pause");
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pause.png"))); // NOI18N
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 70, 30));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 40, 40));
 
-        jButton5.setBackground(new java.awt.Color(204, 153, 255));
-        jButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jButton5.setText("Resume");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, 80, 30));
-
-        jButton6.setBackground(new java.awt.Color(204, 153, 255));
         jButton6.setForeground(new java.awt.Color(255, 255, 255));
-        jButton6.setText("+");
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Aumentar.png"))); // NOI18N
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 40, 30));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 0, 40, 40));
 
-        jButton7.setBackground(new java.awt.Color(204, 153, 255));
         jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setText("-");
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Diminuir.png"))); // NOI18N
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 40, 30));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 40, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/2.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1270, 790));
@@ -210,11 +203,6 @@ public class CadastroFrame extends javax.swing.JFrame {
         MusicPlayer.pauseMusic();
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // resume musica
-        MusicPlayer.resumeMusic();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // diminuir volume
         MusicPlayer.decreaseVolume();
@@ -259,7 +247,6 @@ public class CadastroFrame extends javax.swing.JFrame {
     private javax.swing.JTextField emailCadastroField;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
